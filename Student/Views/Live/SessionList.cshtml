@@ -1,0 +1,119 @@
+﻿@{
+    ViewBag.Title = "SessionList";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+    int RowIndex = 1;
+}
+@model Student.Models.ScheduleClassModels
+<div class="row card m-l-5 p-b-10">
+    <div class="animated fadeInDown">
+        <div class="col-md-12">
+            <div class="feature-classroom table-responsive" tabindex="0" style="overflow: hidden; outline: none;">
+                <h3>My Session List</h3>
+                <table class="tableStyleUp tr td">
+                    <thead>
+                        <tr>
+                            <th><i class="fa fa-calendar"></i></th>
+                            <th>Teacher Name
+                            </th>
+                            <th>Lession Name
+                            </th>
+                            <th>Session Date
+                            </th>
+                            <th>Start Time
+                            </th>
+                            <th>End Time
+                            </th>
+                            <th>
+                                <i class="fa fa-chevron-down"></i>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            var l1 = Model.ScheduleClassList.Select(x => x).Where(x => x.SessionDateTime.Date == DateTime.Now.Date);
+                        }
+                        @foreach (var l in l1)
+                        {
+                            
+                            <tr>
+                                <td>@RowIndex</td>
+                                <td>@l.TeacherName</td>
+                                <td>@l.LessionName</td>
+                                <td>@l.ClassDate</td>
+                                <td>@l.StartTime</td>
+
+                                <td>@l.EndTime</td>
+
+                                <td>
+
+                                    <a href="@Url.Action("MySession", "Live", new { id = Student.Repository.DL.CommanFunction.UrlEncode(l.ClassID) })" target="_blank" class="btn btn-success waves-effect waves-effect">Start Session</a>
+
+
+
+                                </td>
+                            </tr>
+                            RowIndex++;
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div class="feature-classroom table-responsive" tabindex="1" style="overflow: hidden; outline: none;">
+                <h3>Upcoming Schedule Class </h3>
+                <div>
+
+                    <table class="tableStyleCurr tr td">
+                        <thead>
+                            <tr>
+                                <th><i class="fa fa-calendar"></i></th>
+                                <th>Teacher Name
+                                </th>
+                                <th>Lession Name
+                                </th>
+                                <th>Session Date
+                                </th>
+                                <th>Start Time
+                                </th>
+                                <th>End Time
+                                </th>
+                                <th>
+                                    <i class="fa fa-chevron-down"></i>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                 l1 = Model.ScheduleClassList.Select(x => x).Where(x => x.SessionDateTime.Date > DateTime.Now.Date);
+                            }
+                            @foreach (var l in l1)
+                            {
+                            
+                                <tr>
+                                    <td>@RowIndex</td>
+                                    <td>@l.TeacherName</td>
+                                    <td>@l.LessionName</td>
+                                    <td>@l.ClassDate</td>
+                                    <td>@l.StartTime</td>
+
+                                    <td>@l.EndTime</td>
+
+                                    <td>
+
+                                        <a href="@Url.Action("MySession", "Live", new { id = Student.Repository.DL.CommanFunction.UrlEncode(l.ClassID) })" target="_blank" class="btn btn-success waves-effect waves-effect">Start Session</a>
+
+
+
+                                    </td>
+                                </tr>
+                                RowIndex++;
+                            }
+                        </tbody>
+                    </table>
+
+
+                </div>
+            </div>
+        </div>
+        <!--left conent ends-->
+
+    </div>
+</div>

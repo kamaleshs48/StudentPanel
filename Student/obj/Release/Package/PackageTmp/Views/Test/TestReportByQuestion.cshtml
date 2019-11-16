@@ -1,0 +1,169 @@
+﻿@{
+    ViewBag.Title = "TestReportByQuestion";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+
+<script>
+
+
+
+    $(".TestReport").addClass("active");
+    function ReloadPage() {
+        location.reload();
+    }
+</script>
+<style>
+    #tbl1 {
+        font-family: Verdana, Geneva, sans-serif;
+        font-size: 12px;
+        border-width: 1px;
+        border-color: #999999;
+        border-collapse: collapse;
+        width: 99% !important;
+        max-width: 99% !important;
+    }
+
+        #tbl1 th {
+            border-width: 1px;
+            padding: 8px;
+            /*color: #ffffff;*/
+            border-style: solid;
+            border-color: #eeeeee;
+            /*background-color: #428bca !important;*/
+        }
+
+        #tbl1 td {
+            border-width: 1px;
+            padding: 4px;
+            border-style: solid;
+            border-color: #eeeeee;
+        }
+
+        #tbl1 tbody tr:hover {
+            cursor: pointer !important;
+            background-color: #eeeeee;
+        }
+</style>
+<style>
+    @@font-face {
+        font-family: 'K010';
+        src: url('/fonts/K010.ttf') format('truetype');
+    }
+
+    .KrutiDev_hindi_text {
+        font-family: K010 !important;
+        font-size: 18px !important;
+    }
+</style>
+
+<script>
+
+    $(document).ready(function () {
+        setTimeout('ConvertToUniCode()', 2000);
+    });
+
+    function ConvertToUniCode() {
+
+        $('.kkk span').each(function () {
+            var $span = $(this);
+            console.log('sss');
+            var _font = $span.css("font-family");
+            // var spanId = $span.attr('id');
+            //  console.log(_font );
+            if (_font == '"Kruti Dev 010"' || _font == 'Kruti') {
+                // $(this).addClass('hinditext');
+                var spanTxt = $span.text()
+
+                //  $span.text(convert_to_unicode(spanTxt));
+                $span.addClass('KrutiDev_hindi_text')
+
+
+
+            }
+
+
+
+            // do something with the above
+        });
+    }
+</script>
+@model  Student.Models.TestQuestionReportModels
+<div class="col-lg-12">
+    <div class="panel">
+        <div class="panel-heading">
+
+            Test Question Report
+        </div>
+        <div class="panel-body" ng-app="MyApp" ng-controller="MyController" ng-init="init()">
+            <div class="form-horizontal">
+                <div style="background-color:#4285F4;color:#fff">
+                    <hr />
+                    <div class="row">
+                        <div class="col-md-6">
+                            <strong>Paper Name</strong>: @Model.PaperName
+                        </div>
+                        <div class="col-md-6">
+                            <strong>Student Name</strong>: @Model.StudentName
+                        </div>
+                    </div>
+
+
+
+
+
+                </div>
+
+
+            </div>
+            <hr />
+            <div class="row">
+                <div class="row" id="QList">
+
+                    <div class="row">
+
+
+                        <div class="col-md-12">
+                            <table id="tbl1">
+                                <tbody>
+                                    @{int a = 1;}
+                                    @foreach (var l in Model._QList)
+                                    {
+                                        <tr class="@a">
+                                            <td style="width: 10%; border-right: solid thin #eeeeee"><strong>Q.N. </strong>@a)</td>
+                                            <td style="width: 65%;"> <div class="kkk">  @Html.Raw(@l.Question) </div></td>
+
+
+
+                                        </tr>
+                                        <tr>
+                                            <td> <strong>Answer Key</strong> </td>
+                                            <td>@l.Answer_Key</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Response Key</strong> </td>
+                                            <td>@l.Response_Key</td>
+                                        </tr>
+                                        a = a + 1;
+                                    }
+
+                                </tbody>
+                            </table>
+                        </div>
+
+
+                    </div>
+
+
+
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+

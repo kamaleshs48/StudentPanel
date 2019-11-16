@@ -1,0 +1,130 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+    int RowIndex = 1;
+}
+@model Student.Models.TestPaperModels
+<div class="row card m-l-5 p-b-10">
+    <div class="animated fadeInDown">
+        <div class="col-md-12">
+            <div class="feature-classroom table-responsive" tabindex="0" style="overflow: hidden; outline: none;">
+                <h3>Assign Test Paper</h3>
+                <table class="tableStyleUp tr td">
+                    <thead>
+                        <tr>
+                            <th><i class="fa fa-calendar"></i></th>
+                            <th>
+                                Paper Title
+                            </th>
+                            <th>
+                                Total Question
+                            </th>
+                            <th>
+                                Time Duration
+                            </th>
+                            <th>
+                                Start Date
+                            </th>
+                            <th>
+                                Start Time
+                            </th>
+                            <th>
+                                End Time
+                            </th>
+                            <th>
+                                <i class="fa fa-chevron-down"></i>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            var l1 = Model.PaperList.Select(x => x).Where(x => x.TestStatus != 1);
+                        }
+                        @foreach (var l in l1)
+                        {
+
+                            <tr>
+                                <td>@RowIndex</td>
+                                <td>@l.PaperTitle</td>
+                                <td>@l.TotalQuestion</td>
+                                <td>@l.TimeDuration</td>
+                                <td>@l._PaperDate.ToString("dd/MM/yyyy")</td>
+                                <td>@l.PaperStartTime</td>
+                                <td>@l.PaperEndTime</td>
+                                <td>
+
+                                    @{
+                                        if (l.TestStatus == -1)
+                                        {
+                                    <a href="#" onclick="OpenTestPaper('@l.EncodedPaperID','@l.EncodedStudentID')" class="btn btn-success waves-effect waves-effect">Start Test</a>
+                                        }
+                                        else if (l.TestStatus == 0)
+                                        {
+                                    <a href="#" onclick="OpenTestPaper('@l.EncodedPaperID','@l.EncodedStudentID')" class="btn btn-info waves-effect waves-effect">Resume Test</a>
+                                        }
+                                        else
+                                        {
+                                    <a href="#" class="btn btn-info waves-effect waves-effect">Completed Test</a>
+                                        }
+                                    }
+                                </td>
+                            </tr>
+                                            RowIndex++;
+                                        }
+
+                        @{
+                            if (RowIndex == 1)
+                            {
+                                <tr>
+                                    <td colspan="8" align="center"><b>No Record Found</b></td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!--left conent ends-->
+        @*<input type="button" onclick="GoOutFullscreen()" value="ss" />*@
+
+    </div>
+</div>
+
+<script>
+    function OpenTestPaper(pid, sid) {
+
+        var params = 'width=' + screen.availWidth + ', height=' + screen.availHeight
+            + ', top=0, left=0'
+            + ',toolbar=no,scrollbars=no,status=no,menubar=no;fullscreen="yes"';
+        var ss = pid + '?SID=' + sid;
+        //   window.open("http://localhost:49931/Exam/ExamInstruction/" + ss, params);
+        window.open("http://apanacareer.e-exam.in/Exam/ExamInstruction/" + ss, params);
+    }
+    function GoOutFullscreen() {
+        //  var el = document.documentElement,
+        //rfs = el.requestFullscreen
+        //  || el.webkitRequestFullScreen
+        //  || el.mozRequestFullScreen
+        //  || el.msRequestFullscreen
+        //  ;
+
+        //  rfs.call(el);
+        var elem = document.body; // Make the body go full screen.
+        requestFullScreen(elem);
+        // document.documentElement.requestFullscreen();
+    }
+    function requestFullScreen(element) {
+        // Supports most browsers and their versions.
+        var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullScreen;
+
+        if (requestMethod) { // Native full screen.
+            requestMethod.call(element);
+        } else if (typeof window.ActiveXObject !== "undefined") { // Older IE.
+            var wscript = new ActiveXObject("WScript.Shell");
+            if (wscript !== null) {
+                wscript.SendKeys("{F11}");
+            }
+        }
+    }
+
+</script>

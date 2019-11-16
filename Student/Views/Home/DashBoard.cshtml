@@ -1,0 +1,276 @@
+﻿@{
+    ViewBag.Title = "DashBoard";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+<input data-val="true" data-val-number="The field MemberId must be a number." data-val-required="The MemberId field is required." id="MemberId" name="MemberId" type="hidden" value="10843">
+<div class="card" id="profile-main">
+    <div class="pm-overview c-overflow" tabindex="1" style="overflow: hidden; outline: none;">
+        <div class="pmo-pic">
+            <div class="p-relative">
+                <div id="myProgress" class="p-t-30" style="display: none">
+                    <div id="myBar">
+                        <div id="labelno">10%</div>
+                    </div>
+                </div>
+                <a href="#" id="picarea">
+                    <img id="imgPreview" src="http://www.dotnettricks.com/Areas/Member/Content/images/user_img.png">
+                </a>
+
+                <div class="dropdown pmop-message" id="Imageedit">
+                    <a data-toggle="dropdown" href="#" class="btn bgm-white btn-float z-depth-1 waves-effect waves-circle waves-float" title="Change Image">
+                        <i class="zmdi zmdi-camera"></i>
+                    </a>
+
+                    <div class="dropdown-menu">
+                        <a href="#" class="pmop-edit">
+
+                            <input type="file" id="UploadImg" style="background-color: transparent; color: red">
+                        </a>
+
+                    </div>
+                </div>
+
+
+            </div>
+
+
+            <div class="pmo-stat">
+                <h2 class="m-0 c-white">kamlesh </h2>
+                <small><span id="DesignationDis"></span></small>
+            </div>
+        </div>
+
+        <div class="pmo-block pmo-contact hidden-xs">
+            <h2>Social Contact</h2>
+
+            <ul>
+                <li>
+                    <i class="zmdi zmdi-phone"></i><span id="disContactNo">+91-7042771791</span>
+                </li>
+                <li><i class="zmdi zmdi-email"></i><span id="disEmail">kamaleshs48@gmail.com</span></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="pm-body clearfix">
+
+        <div class="pmb-block">
+            <div class="pmbb-header">
+                <h2><i class="zmdi zmdi-equalizer m-r-5"></i>Profile</h2>
+
+                <ul class="actions">
+                    <li class="dropdown">
+                        <a data-pmb-action="edit" href="#">Edit</a>
+
+
+                    </li>
+                </ul>
+            </div>
+            <div class="pmbb-body p-l-30">
+                <div class="pmbb-view" id="bview">
+                    <span style="color: #bbb5b5">Describe Yourself...</span>
+                </div>
+
+                <div class="pmbb-edit" id="bedit">
+                    <div class="fg-line">
+                        <textarea class="form-control" cols="20" data-val="true" data-val-length="The field Bio must be a string with a maximum length of 1000." data-val-length-max="1000" id="Biography" name="Biography" placeholder="Summary..." rows="3"></textarea>
+
+                    </div>
+                    <div class="m-t-10">
+                        <button class="btn btn-primary btn-sm waves-effect" id="btnBio">Save</button>
+                        <button data-pmb-action="reset" class="btn btn-link btn-sm waves-effect">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pmb-block toggled">
+            <div class="pmbb-header">
+                <h2><i class="zmdi zmdi-account m-r-5"></i>Basic Information</h2>
+
+                <ul class="actions">
+                    <li class="dropdown">
+                        <a data-pmb-action="edit" href="#">Edit</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="pmbb-body p-l-30">
+                <div class="pmbb-view" id="basview">
+                    <dl class="dl-horizontal">
+                        <dt>Full Name</dt>
+                        <dd><span id="spanName">kamlesh</span></dd>
+                    </dl>
+
+                    <dl class="dl-horizontal">
+                        <dt>Designation</dt>
+                        <dd><span id="spanDesignation"></span></dd>
+                    </dl>
+                    <dl class="dl-horizontal">
+                        <dt>Company</dt>
+                        <dd><span id="spanCompany"></span></dd>
+                    </dl>
+                    <dl class="dl-horizontal">
+                        <dt>Gender</dt>
+                        <dd><span id="spanGenderName">----</span></dd>
+
+                    </dl>
+                </div>
+
+                <div class="pmbb-edit" id="basedit">
+                    <dl class="dl-horizontal">
+                        <dt class="p-t-10">Full Name</dt>
+                        <dd>
+                            <div class="fg-line">
+                                <input class="form-control" data-val="true" data-val-length="The field Full Name must be a string with a maximum length of 50." data-val-length-max="50" data-val-required="Please enter name" id="Name" name="Name" type="text" value="kamlesh">
+                            </div>
+
+                        </dd>
+                    </dl>
+
+                    <dl class="dl-horizontal">
+                        <dt class="p-t-10">Designation</dt>
+                        <dd>
+                            <div class="fg-line">
+                                <input class="form-control" data-val="true" data-val-length="The field Designation must be a string with a maximum length of 100." data-val-length-max="100" id="Designation" name="Designation" type="text" value="">
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl class="dl-horizontal">
+                        <dt class="p-t-10">Company</dt>
+                        <dd>
+                            <div class="fg-line">
+                                <input class="form-control" data-val="true" data-val-length="The field Company must be a string with a maximum length of 250." data-val-length-max="250" id="Company" name="Company" type="text" value="">
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl class="dl-horizontal">
+                        <dt class="p-t-10">Gender</dt>
+                        <dd>
+                            <div class="fg-line">
+                                <select class="form-control placeholder" data-val="true" data-val-number="The field GenderId must be a number." id="GenderId" name="GenderId">
+                                    <option value="">- Select Gender -</option>
+                                    <option value="1">Male</option>
+                                    <option value="2">Female</option>
+                                </select>
+
+
+                            </div>
+                        </dd>
+                    </dl>
+                    <div class="m-t-30">
+                        <button class="btn btn-primary btn-sm waves-effect" id="btnBasic">Save</button>
+                        <button data-pmb-action="reset" class="btn btn-link btn-sm waves-effect">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="pmb-block">
+            <div class="pmbb-header">
+                <h2><i class="zmdi zmdi-phone m-r-5"></i>Contact Information</h2>
+
+                <ul class="actions">
+                    <li class="dropdown">
+                        <a data-pmb-action="edit" href="#">Edit</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="pmbb-body p-l-30">
+                <div class="pmbb-view" id="conview">
+                    <dl class="dl-horizontal">
+                        <dt>Mobile Phone</dt>
+                        <dd><span id="spanContactNo">+91-7042771791</span></dd>
+                    </dl>
+                    <dl class="dl-horizontal">
+                        <dt>Email Address</dt>
+                        <dd><span id="spanEmail">kamaleshs48@gmail.com</span></dd>
+                    </dl>
+                    <dl class="dl-horizontal">
+                        <dt>Location</dt>
+                        <dd>
+                            <span id="spanCurrentLocation"></span>
+                        </dd>
+                    </dl>
+                    <dl class="dl-horizontal">
+                        <dt>LinkedIn</dt>
+                        <dd><span id="spanLinkedIn"></span></dd>
+                    </dl>
+
+                    <dl class="dl-horizontal">
+                        <dt>Facebook</dt>
+                        <dd><span id="spanFacebook"></span></dd>
+                    </dl>
+                    <dl class="dl-horizontal">
+                        <dt>Twitter</dt>
+                        <dd><span id="spanTwitter"></span></dd>
+                    </dl>
+                    <dl class="dl-horizontal">
+                        <dt>Skype</dt>
+                        <dd><span id="spanSkype"></span></dd>
+                    </dl>
+
+                </div>
+
+
+                <div class="pmbb-edit" id="conedit">
+                    <dl class="dl-horizontal">
+                        <dt class="p-t-10">Mobile Phone</dt>
+                        <dd>
+                            <div class="fg-line">
+                                <input class="form-control" data-val="true" data-val-length="The field ContactNo must be a string with a maximum length of 20." data-val-length-max="20" data-val-required="Please enter your mobile number" id="ContactNo" name="ContactNo" type="text" value="+91-7042771791">
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl class="dl-horizontal">
+                        <dt class="p-t-10">Email Address</dt>
+                        <dd>
+                            <div class="fg-line">
+                                <input data-val="true" data-val-length="The field Email must be a string with a maximum length of 50." data-val-length-max="50" data-val-regex="Please enter a valid e-mail adress" data-val-required="Please enter your email id" id="Email" name="Email" type="hidden" value="kamaleshs48@gmail.com">
+                                <input class="form-control" disabled="disabled" id="Email" maxlength="200" name="Email" readonly="readonly" type="text" value="kamaleshs48@gmail.com">
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl class="dl-horizontal">
+                        <dt>Location</dt>
+                        <dd>
+                            <div class="fg-line">
+                                <input class="form-control" data-val="true" data-val-length="The field Current Location must be a string with a maximum length of 1000." data-val-length-max="1000" id="CurrentLocation" maxlength="200" name="CurrentLocation" type="text" value="">
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl class="dl-horizontal">
+                        <dt>LinkedIn</dt>
+                        <dd>
+                            <input class="form-control" id="LinkedIn" name="LinkedIn" type="text" value=""></dd>
+                    </dl>
+
+                    <dl class="dl-horizontal">
+                        <dt>Facebook</dt>
+                        <dd>
+                            <input class="form-control" id="Facebook" name="Facebook" type="text" value=""></dd>
+                    </dl>
+                    <dl class="dl-horizontal">
+                        <dt>Twitter</dt>
+                        <dd>
+                            <input class="form-control" id="Twitter" name="Twitter" type="text" value=""></dd>
+                    </dl>
+                    <dl class="dl-horizontal">
+                        <dt>Skype</dt>
+                        <dd>
+                            <input class="form-control" id="Skype" name="Skype" type="text" value=""></dd>
+                    </dl>
+
+                    <div class="m-t-30">
+                        <button class="btn btn-primary btn-sm waves-effect" id="btnContact">Save</button>
+                        <button data-pmb-action="reset" class="btn btn-link btn-sm waves-effect">Cancel</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+

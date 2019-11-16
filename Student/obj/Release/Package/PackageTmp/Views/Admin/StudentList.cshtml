@@ -1,0 +1,356 @@
+﻿@{
+    ViewBag.Title = "StudentList";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+
+
+<div class="block-header">
+
+    <h2 style="padding-top: 15px;">Dot Net Tricks Batches Details</h2>
+    <span></span>
+</div>
+<div class="row card m-l-5 p-b-10">
+    <div class="animated fadeInDown">
+        <div class="col-md-12">
+            <div class="feature-classroom table-responsive" tabindex="0" style="overflow: hidden; outline: none;">
+                <h3>Upcoming Batches </h3>
+                <table class="tableStyleUp tr td">
+                    <tbody>
+                        <tr>
+                            <th style="width: 6%"><i class="fa fa-calendar"></i></th>
+                            <th style="width: 25%">Name
+                            </th>
+                            <th style="width: 24%">Timing
+                            </th>
+                            <th>Mode
+                            </th>
+                            <th style="width: 20%">Mentor
+                            </th>
+                            <th>
+                                <i class="fa fa-chevron-down"></i>
+                            </th>
+
+                        </tr>
+                        <tr style="text-align: center">
+                            <td>
+                                <div style="background-color: #ECECEC; padding: 4px 10px">
+                                    <span style="font-size: 15px; font-weight: 600">10
+                                    </span>
+                                    <span style="font-size: 14px; font-weight: 500" id="daymoth">JAN</span>
+                                </div>
+                            </td>
+                            <td>ASP.NET MVC with AngularJS Development<br>
+                                <br>
+                            </td>
+                            <td>09:00 PM-11:00 PM IST on (TUE, THRU,SAT)
+                                                    (GMT +5:30)
+                            </td>
+
+                            <td>online
+                            </td>
+                            <td>Shailendra Chauhan
+                            </td>
+                            <td>
+                                <a class="btn btn-success waves-effect" id="1" data-toggle="modal" href="http://www.dotnettricks.com/training/mvc-angularjs-development">
+                                    <span>More Details
+                                    </span>
+                                </a>
+                            </td>
+
+                        </tr>
+                        <tr style="text-align: center">
+                            <td>
+                                <div style="background-color: #ECECEC; padding: 4px 10px">
+                                    <span style="font-size: 15px; font-weight: 600">10
+                                    </span>
+                                    <span style="font-size: 14px; font-weight: 500" id="daymoth">JAN</span>
+                                </div>
+                            </td>
+                            <td>Angular2 and Angular1 Development<br>
+                                <br>
+                            </td>
+                            <td>07:00 AM-08:30 AM IST
+                                                    (GMT +5:30)
+                            </td>
+
+                            <td>online
+                            </td>
+                            <td>Shailendra Chauhan
+                            </td>
+                            <td>
+                                <a class="btn btn-success waves-effect" id="5" data-toggle="modal" href="http://www.dotnettricks.com/training/angular-development">
+                                    <span>More Details
+                                    </span>
+                                </a>
+                            </td>
+
+                        </tr>
+                        <tr style="text-align: center">
+                            <td>
+                                <div style="background-color: #ECECEC; padding: 4px 10px">
+                                    <span style="font-size: 15px; font-weight: 600">9
+                                    </span>
+                                    <span style="font-size: 14px; font-weight: 500" id="daymoth">JAN</span>
+                                </div>
+                            </td>
+                            <td>MEAN Stack 2.x Development<br>
+                                <br>
+                            </td>
+                            <td>09:00 PM-11:00 PM GMT +5:30 on (MON, WED, FRI)
+                                                    (GMT +5:30)
+                            </td>
+
+                            <td>online
+                            </td>
+                            <td>Shailendra Chauhan
+                            </td>
+                            <td>
+                                <a class="btn btn-success waves-effect" id="4" data-toggle="modal" href="http://www.dotnettricks.com/training/mean-stack-development">
+                                    <span>More Details
+                                    </span>
+                                </a>
+                            </td>
+
+                        </tr>
+                        <tr style="text-align: center">
+                            <td>
+                                <div style="background-color: #ECECEC; padding: 4px 10px">
+                                    <span style="font-size: 15px; font-weight: 600">8
+                                    </span>
+                                    <span style="font-size: 14px; font-weight: 500" id="daymoth">JAN</span>
+                                </div>
+                            </td>
+                            <td>Xamarin Forms : Build Cross-platform Apps<br>
+                                <br>
+                            </td>
+                            <td>05:00 PM-06:30 PM IST
+                                                    (GMT +5:30)
+                            </td>
+
+                            <td>offline
+                            </td>
+                            <td>Shailendra Chauhan
+                            </td>
+                            <td>
+                                <a class="btn btn-success waves-effect" id="11" data-toggle="modal" href="http://www.dotnettricks.com/training/xamarin-forms-build-native-cross-platform-apps">
+                                    <span>More Details
+                                    </span>
+                                </a>
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="feature-classroom table-responsive" tabindex="1" style="overflow: hidden; outline: none;">
+                <h3>Current Batches </h3>
+                <div>
+
+                    <table class="tableStyleCurr tr td">
+                        <tbody>
+                            <tr>
+
+                                <th style="width: 8%"><i class="fa fa-calendar"></i></th>
+                                <th style="width: 35%">Name
+                                </th>
+                                <th style="width: 25%">Timing
+                                </th>
+
+
+                                <th>Mode
+                                </th>
+                                <th style="width: 25%">Mentor
+                                </th>
+
+
+                            </tr>
+
+                            <tr style="text-align: center">
+                                <td>
+                                    <div style="background-color: #ECECEC; padding: 4px 10px">
+                                        <span style="font-size: 15px; font-weight: 600">3
+                                        </span>
+                                        <span style="font-size: 14px; font-weight: 500" id="daymoth">JAN</span>
+                                    </div>
+                                </td>
+                                <td>ASP.NET MVC with AngularJS Development
+                                </td>
+                                <td>07:00 AM-09:00 AM IST
+                                                    <br>
+                                    (GMT +5:30)
+                                </td>
+
+                                <td>online
+                                </td>
+                                <td>Shailendra Chauhan
+                                </td>
+
+
+                            </tr>
+                            <tr style="text-align: center">
+                                <td>
+                                    <div style="background-color: #ECECEC; padding: 4px 10px">
+                                        <span style="font-size: 15px; font-weight: 600">31
+                                        </span>
+                                        <span style="font-size: 14px; font-weight: 500" id="daymoth">DEC</span>
+                                    </div>
+                                </td>
+                                <td>Angular2 and Angular1 Development
+                                </td>
+                                <td>11:00 AM-12:30 AM
+                                                    <br>
+                                    (GMT +5:30)
+                                </td>
+
+                                <td>offline
+                                </td>
+                                <td>Shailendra Chauhan
+                                </td>
+
+
+                            </tr>
+                            <tr style="text-align: center">
+                                <td>
+                                    <div style="background-color: #ECECEC; padding: 4px 10px">
+                                        <span style="font-size: 15px; font-weight: 600">31
+                                        </span>
+                                        <span style="font-size: 14px; font-weight: 500" id="daymoth">DEC</span>
+                                    </div>
+                                </td>
+                                <td>ASP.NET MVC with AngularJS Development
+                                </td>
+                                <td>09:30 AM-11:00 AM
+                                                    <br>
+                                    (GMT +5:30)
+                                </td>
+
+                                <td>offline
+                                </td>
+                                <td>Shailendra Chauhan
+                                </td>
+
+
+                            </tr>
+                            <tr style="text-align: center">
+                                <td>
+                                    <div style="background-color: #ECECEC; padding: 4px 10px">
+                                        <span style="font-size: 15px; font-weight: 600">30
+                                        </span>
+                                        <span style="font-size: 14px; font-weight: 500" id="daymoth">DEC</span>
+                                    </div>
+                                </td>
+                                <td>ASP.NET MVC with AngularJS Development
+                                </td>
+                                <td>(Mon-Fri at 07:30 AM-09:00 AM IST)
+                                                    <br>
+                                    (GMT +5:30)
+                                </td>
+
+                                <td>online
+                                </td>
+                                <td>Shailendra Chauhan
+                                </td>
+
+
+                            </tr>
+                            <tr style="text-align: center">
+                                <td>
+                                    <div style="background-color: #ECECEC; padding: 4px 10px">
+                                        <span style="font-size: 15px; font-weight: 600">17
+                                        </span>
+                                        <span style="font-size: 14px; font-weight: 500" id="daymoth">DEC</span>
+                                    </div>
+                                </td>
+                                <td>PPC Marketing
+                                </td>
+                                <td>02:00 PM-04:00 PM
+                                                    <br>
+                                    (GMT +5:30)
+                                </td>
+
+                                <td>offline
+                                </td>
+                                <td>Piyush Srivastava
+                                </td>
+
+
+                            </tr>
+                            <tr style="text-align: center">
+                                <td>
+                                    <div style="background-color: #ECECEC; padding: 4px 10px">
+                                        <span style="font-size: 15px; font-weight: 600">26
+                                        </span>
+                                        <span style="font-size: 14px; font-weight: 500" id="daymoth">NOV</span>
+                                    </div>
+                                </td>
+                                <td>ASP.NET MVC with AngularJS Development
+                                </td>
+                                <td>03:00 PM-04:30 PM
+                                                    <br>
+                                    (GMT +5:30)
+                                </td>
+
+                                <td>offline
+                                </td>
+                                <td>Shailendra Chauhan
+                                </td>
+
+
+                            </tr>
+                            <tr style="text-align: center">
+                                <td>
+                                    <div style="background-color: #ECECEC; padding: 4px 10px">
+                                        <span style="font-size: 15px; font-weight: 600">5
+                                        </span>
+                                        <span style="font-size: 14px; font-weight: 500" id="daymoth">NOV</span>
+                                    </div>
+                                </td>
+                                <td>ASP.NET MVC with AngularJS Development
+                                </td>
+                                <td>08:00 AM-09:30 AM
+                                                    <br>
+                                    (GMT +5:30)
+                                </td>
+
+                                <td>offline
+                                </td>
+                                <td>Shailendra Chauhan
+                                </td>
+
+
+                            </tr>
+                            <tr style="text-align: center">
+                                <td>
+                                    <div style="background-color: #ECECEC; padding: 4px 10px">
+                                        <span style="font-size: 15px; font-weight: 600">4
+                                        </span>
+                                        <span style="font-size: 14px; font-weight: 500" id="daymoth">SEP</span>
+                                    </div>
+                                </td>
+                                <td>NodeJS Development
+                                </td>
+                                <td>11:00 AM-12:30 PM.
+                                                    <br>
+                                    (GMT +5:30)
+                                </td>
+
+                                <td>offline
+                                </td>
+                                <td>Shailendra Chauhan
+                                </td>
+
+
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+                </div>
+            </div>
+        </div>
+        <!--left conent ends-->
+
+    </div>
+</div>
+

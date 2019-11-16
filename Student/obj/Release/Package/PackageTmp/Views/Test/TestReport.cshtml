@@ -1,0 +1,92 @@
+﻿@{
+    ViewBag.Title = "TestReport";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+@model Student.Models.ScoreBoardModels
+@Html.HiddenFor(m => m.correctQuestions)
+@Html.HiddenFor(m => m.wrongQuestions)
+@Html.HiddenFor(m => m.leftQuestions)
+@Html.HiddenFor(m => m.TimeTaken)
+@Html.HiddenFor(m => m.Duration)
+@Html.HiddenFor(m => m.leftTime)
+
+@*<input data-val="true"  id="correctQuestions" name="correctQuestions" type="hidden" value="2" />
+    <input  id="wrongQuestions" name="wrongQuestions" type="hidden" value="3" />
+    <input  id="leftQuestions" name="leftQuestions" type="hidden" value="10" />
+    <input id="TimeTaken" name="TimeTaken" type="hidden" value="45" />
+    <input id="Duration" name="Duration" type="hidden" value="5" />
+    <input  id="leftTime" name="leftTime" type="hidden" value="255" />
+*@
+<div class="row">
+    <div class="block-header">
+        <h3>
+          <strong>Paper Name:- </strong>  @Model.PaperName
+
+        </h3>
+    </div>
+    <div class="card">
+        <div class="row">
+            <div class="card-header">
+                <h2 class="p-l-12">Score Card</h2>
+            </div>
+            <div class="col-sm-3">
+                <div class="card pt-inner">
+                    <div class="pti-header bgm-amber">
+                        @{ int a = Model.TotalQuestion - Model.leftQuestions;}
+                        <h2>@a/@Model.TotalQuestion</h2>
+                        <div class="ptih-title">Questions Attempted</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card pt-inner">
+                    <div class="pti-header bgm-green">
+                        <h2>@Model.correctQuestions/@Model.TotalQuestion</h2>
+                        <div class="ptih-title">Correct Answers</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card pt-inner">
+                    <div class="pti-header bgm-red">
+                        <h2>@Model.wrongQuestions/@Model.TotalQuestion </h2>
+                        <div class="ptih-title">Wrong Answers</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card pt-inner">
+                    <div class="pti-header bgm-cyan">
+                        <h2>@Model.Obtain_Marks</h2>
+                        <div class="ptih-title">Obtain Marks</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Question Card</h2>
+                </div>
+                <div class="card-body card-padding">
+                    <div id="pie-chart" class="flot-chart-pie" style="padding: 0px; position: relative;"><canvas class="flot-base" width="397" height="300" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 397px; height: 300px;"></canvas><canvas class="flot-overlay" width="397" height="300" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 397px; height: 300px;"></canvas></div>
+                    <div class="flc-pie"><table style="font-size:smaller;color:#545454"><tbody><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid #FFC107;overflow:hidden"></div></div></td><td class="legendLabel">Left Questions</td><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid #8BC34A;overflow:hidden"></div></div></td><td class="legendLabel">Correct Answers</td><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid #F44336;overflow:hidden"></div></div></td><td class="legendLabel">Wrong Answers</td></tr></tbody></table></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Time Card</h2>
+                </div>
+                <div class="card-body card-padding">
+                    <div id="donut-chart" class="flot-chart-pie" style="padding: 0px; position: relative;"><canvas class="flot-base" width="397" height="300" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 397px; height: 300px;"></canvas><canvas class="flot-overlay" width="397" height="300" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 397px; height: 300px;"></canvas></div>
+                    <div class="flc-donut "><table style="font-size:smaller;color:#545454"><tbody><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid #03A9F4;overflow:hidden"></div></div></td><td class="legendLabel">Time Taken</td><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid #8BC34A;overflow:hidden"></div></div></td><td class="legendLabel">Time Left</td></tr></tbody></table></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://www.dotnettricks.com/member/chart/js?v=muKc-SGDd2guDFfOhUZoJcOJcjTVdr3s7kEof4MWZP81"></script>
