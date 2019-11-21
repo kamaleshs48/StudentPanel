@@ -5,6 +5,7 @@ using System.Web;
 using Student.Models;
 using System.Data;
 using System.Data.SqlClient;
+using System.Web.Mvc;
 namespace Student.Repository.DL
 {
     public class clsLoginDL
@@ -17,9 +18,10 @@ namespace Student.Repository.DL
             SqlParameter[] pr = new SqlParameter[]
             {
             new SqlParameter("@Email",models.EmailID),
+            new SqlParameter("@ORG_ID",models.ORG_ID),
             new SqlParameter("@Password",models.Password),
             new SqlParameter("@Mode","StudentLogin")
-               
+
             };
             ds = SqlHelper.ExecuteDataset(SqlHelper.ConnectionStr(), CommandType.StoredProcedure, "sp_Login", pr);
             if (ds != null && ds.Tables[0].Rows.Count > 0)
@@ -64,6 +66,30 @@ namespace Student.Repository.DL
                 result.Response = MethodResponse.Invalid_Email_And_Password;
             }
             return result;
+        }
+
+
+
+        public static List<SelectListItem> GetInstituteList()
+        {
+            string _Qry = "select CompanyName,ORG_ID,UserID from tbl_UserDetails Where CompanyName is not null and CompanyName<>''";
+            DataSet ds = SqlHelper.ExecuteDataset(SqlHelper.ConnectionStr(), CommandType.Text, _Qry);
+
+            List<SelectListItem> _List = new List<SelectListItem>();
+            if (ds != null && ds.Tables[0].Rows.Count > 0)
+            {
+
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    _List.Add(new SelectListItem
+                    {
+                        Text = dr["CompanyName"].ToString(),
+                        Value = dr["ORG_ID"].ToString(),
+                    }); ;
+                }
+            }
+
+            return _List;
         }
     }
 }

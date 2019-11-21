@@ -20,7 +20,7 @@
     <div class="row" style="border-bottom: 1px solid #CCCCCC; background-color: #fff; margin: 0; height: 66px;">
         <div class="container text-center">
             <a href="/">
-                <img src="http://apanacareer.com/images/logo.jpg" alt="Classroom and Instructor-led Online Training for Professionals" style="margin-top: 5px; margin-bottom: 0px;height:50px">
+                <img src="http://www.bathuasoft.com/assets/images/Bathua-Soft.png" alt="Classroom and Instructor-led Online Training for Professionals" style="margin-top: 5px; margin-bottom: 0px;height:50px">
             </a>
         </div>
     </div>
@@ -42,11 +42,21 @@
                                     @ViewBag.Error
                                 </div>
                                 <div class="form-group">
+                                    <p>Institute/Collage Name</p>
+                                    <div class="input-group field">
+
+                                        <span class="input-group-addon">
+                                            <i class="fa fa-institution"></i>
+                                        </span>
+                                        @Html.DropDownListFor(m => m.ORG_ID, Model.InstituteList,"--Select--", new { @class = "form-control"})
+                                    </div>
+                                </div>
+                                <div class="form-group">
                                     <div class="input-group field">
                                         <span class="input-group-addon">
                                             <i class="fa fa-envelope"></i>
                                         </span>
-                                        @Html.TextBoxFor(m=>m.EmailID,new {@class="form-control",@maxlength="50",@placeholder="Email*"})
+                                        @Html.TextBoxFor(m => m.EmailID, new { @class = "form-control", @maxlength = "50", @placeholder = "Email*" })
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -54,15 +64,15 @@
                                         <span class="input-group-addon">
                                             <i class="fa fa-key"></i>
                                         </span>
-                                        @Html.PasswordFor(m=>m.Password,new {@class="form-control",@maxlength="50",@placeholder="Password*"})
+                                        @Html.PasswordFor(m => m.Password, new { @class = "form-control", @maxlength = "50", @placeholder = "Password*" })
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <input data-val="true" data-val-required="The Remember me field is required." id="IsRemember" name="IsRemember" type="checkbox" value="true"><input name="IsRemember" type="hidden" value="false">
                                     Remember me
                                     @*<span class="pull-right">
-                                            <a href="/forgot-password">Forgot Password?</a>
-                                        </span>*@
+                <a href="/forgot-password">Forgot Password?</a>
+            </span>*@
                                 </div>
                             </div>
                             <div class="row">

@@ -50,7 +50,12 @@ namespace Student.Controllers
 
         public ActionResult Login()
         {
-            return View();
+            LoginModels models = new LoginModels();
+
+            models.InstituteList = clsLoginBL.GetInstituteList();
+
+
+            return View(models);
         }
         [HttpPost]
         public ActionResult Login(LoginModels models)
@@ -78,6 +83,7 @@ namespace Student.Controllers
                 ViewBag.Error=ex.ToString();
 
             }
+            models.InstituteList = clsLoginBL.GetInstituteList();
             return View(models);
         }
 

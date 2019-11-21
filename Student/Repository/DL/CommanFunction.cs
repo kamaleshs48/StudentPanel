@@ -165,8 +165,6 @@ namespace Student.Repository.DL
             return _List;
 
         }
-
-
         public static List<TestPaperModels> GetMyAssignPaperList(int StudentID)
         {
             List<TestPaperModels> _List = new List<TestPaperModels>();

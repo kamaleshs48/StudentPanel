@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using Student.Models;
 using Student.Repository.DL;
+using System.Web.Mvc;
 namespace Student.Repository.BL
 {
     public class clsLoginBL
@@ -16,6 +17,10 @@ namespace Student.Repository.BL
         public static ResponseModels ForgotPassword(ForgotPasswordModels models)
         {
             return   clsLoginDL.ForgotPassword (models);
+        }
+        public static List<SelectListItem> GetInstituteList()
+        {
+            return clsLoginDL.GetInstituteList();
         }
 
     }
