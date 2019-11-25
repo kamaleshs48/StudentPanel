@@ -3,16 +3,27 @@
     Layout = "~/Views/Shared/_LayoutMain.cshtml";
     int RowIndex = 1;
 }
+<style>
+    .th1 {
+        text-align: center;
+        background-color: #F5811D !important;
+        color: white;
+        font-family: Verdana, Geneva,sans-serif;
+    }
+</style>
 @model Student.Models.TestPaperModels
 <div class="row card m-l-5 p-b-10">
     <div class="animated fadeInDown">
         <div class="col-md-12">
-            <div class="feature-classroom table-responsive" tabindex="0" style="overflow: hidden; outline: none;">
+            <div class="feature-classroom table-responsive" tabindex="0" style="overflow: scroll;">
                 <h3>Completed Test Paper</h3>
-                <table class="tableStyleUp tr td">
+                <table class="tableStyleUp">
                     <thead>
                         <tr>
                             <th><i class="fa fa-calendar"></i></th>
+                            <th>
+                                <i class="fa fa-chevron-down"></i>
+                            </th>
                             <th>
                                 Paper Title
                             </th>
@@ -31,9 +42,7 @@
                             <th>
                                 End Time
                             </th>
-                            <th>
-                                <i class="fa fa-chevron-down"></i>
-                            </th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -45,12 +54,6 @@
 
                             <tr>
                                 <td>@RowIndex</td>
-                                <td>@l.PaperTitle</td>
-                                <td>@l.TotalQuestion</td>
-                                <td>@l.TimeDuration</td>
-                                <td>@l._PaperDate.ToString("dd/MM/yyyy")</td>
-                                <td>@l.PaperStartTime</td>
-                                <td>@l.PaperEndTime</td>
                                 <td>
 
                                     @{
@@ -67,9 +70,16 @@
 
                                     }
                                 </td>
+                                <td>@l.PaperTitle</td>
+                                <td>@l.TotalQuestion</td>
+                                <td>@l.TimeDuration</td>
+                                <td>@l._PaperDate.ToString("dd/MM/yyyy")</td>
+                                <td>@l.PaperStartTime</td>
+                                <td>@l.PaperEndTime</td>
+
                             </tr>
-                                            RowIndex++;
-                                        }
+                            RowIndex++;
+                        }
                         @{
                             if (RowIndex == 1)
                             {

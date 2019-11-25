@@ -7,12 +7,15 @@
 <div class="row card m-l-5 p-b-10">
     <div class="animated fadeInDown">
         <div class="col-md-12">
-            <div class="feature-classroom table-responsive" tabindex="0" style="overflow: hidden; outline: none;">
+            <div class="feature-classroom table-responsive" tabindex="0" style="overflow: scroll;">
                 <h3>Assign Test Paper</h3>
-                <table class="tableStyleUp tr td">
+                <table class="tableStyleUp">
                     <thead>
                         <tr>
                             <th><i class="fa fa-calendar"></i></th>
+                            <th>
+                                <i class="fa fa-chevron-down"></i>
+                            </th>
                             <th>
                                 Paper Title
                             </th>
@@ -31,9 +34,7 @@
                             <th>
                                 End Time
                             </th>
-                            <th>
-                                <i class="fa fa-chevron-down"></i>
-                            </th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -45,32 +46,33 @@
 
                             <tr>
                                 <td>@RowIndex</td>
+                                <td>
+
+                                    @{
+                                        if (l.TestStatus == -1)
+                                        {
+                                            <a href="#" onclick="OpenTestPaper('@l.EncodedPaperID','@l.EncodedStudentID')" class="btn btn-success waves-effect waves-effect">Start Test</a>
+                                        }
+                                        else if (l.TestStatus == 0)
+                                        {
+                                            <a href="#" onclick="OpenTestPaper('@l.EncodedPaperID','@l.EncodedStudentID')" class="btn btn-info waves-effect waves-effect">Resume Test</a>
+                                        }
+                                        else
+                                        {
+                                            <a href="#" class="btn btn-info waves-effect waves-effect">Completed Test</a>
+                                        }
+                                    }
+                                </td>
                                 <td>@l.PaperTitle</td>
                                 <td>@l.TotalQuestion</td>
                                 <td>@l.TimeDuration</td>
                                 <td>@l._PaperDate.ToString("dd/MM/yyyy")</td>
                                 <td>@l.PaperStartTime</td>
                                 <td>@l.PaperEndTime</td>
-                                <td>
 
-                                    @{
-                                        if (l.TestStatus == -1)
-                                        {
-                                    <a href="#" onclick="OpenTestPaper('@l.EncodedPaperID','@l.EncodedStudentID')" class="btn btn-success waves-effect waves-effect">Start Test</a>
-                                        }
-                                        else if (l.TestStatus == 0)
-                                        {
-                                    <a href="#" onclick="OpenTestPaper('@l.EncodedPaperID','@l.EncodedStudentID')" class="btn btn-info waves-effect waves-effect">Resume Test</a>
-                                        }
-                                        else
-                                        {
-                                    <a href="#" class="btn btn-info waves-effect waves-effect">Completed Test</a>
-                                        }
-                                    }
-                                </td>
                             </tr>
-                                            RowIndex++;
-                                        }
+                            RowIndex++;
+                        }
 
                         @{
                             if (RowIndex == 1)
