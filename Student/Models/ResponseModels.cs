@@ -5,15 +5,9 @@ using System.Web;
 
 namespace Student.Models
 {
-    public class ResponseModels
+    public class ResponseModels:ProfileModels
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-
-        public string Email { get; set; }
-        public string Password { get; set; }
-        public int UserID { get; set; }
-        public int OrgID { get; set; }
+       
         public MethodResponse Response { get; set; }
 
     }

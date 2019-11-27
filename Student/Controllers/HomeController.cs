@@ -34,7 +34,7 @@ namespace Student.Controllers
              if (Session[SessionVariable.LoginUserDetails] != null)
              {
                  _ResponseModel = (ResponseModels)Session[SessionVariable.LoginUserDetails];
-                 model.FirsName = _ResponseModel.FirstName;
+                 model.FirstName = _ResponseModel.FirstName;
                  model.LastName = _ResponseModel.LastName;
                  model.UserID = _ResponseModel.UserID;
                 Session[SessionVariable.UserID] = _ResponseModel.UserID;

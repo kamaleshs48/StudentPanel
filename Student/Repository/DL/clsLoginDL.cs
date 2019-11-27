@@ -29,8 +29,19 @@ namespace Student.Repository.DL
                 result.Email = ds.Tables[0].Rows[0]["Email"].ToString();
                 result.UserID = Convert.ToInt32(ds.Tables[0].Rows[0]["id"].ToString());
                 result.FirstName = ds.Tables[0].Rows[0]["Name"].ToString();
-                //result.LastName = ds.Tables[0].Rows[0]["StudentLastName"].ToString();
-                result.OrgID = Convert.ToInt32(ds.Tables[0].Rows[0]["ORG_ID"].ToString());
+                result.LastName = ds.Tables[0].Rows[0]["StudentLastName"].ToString();
+                result.MobilePhone = ds.Tables[0].Rows[0]["StudentLastName"].ToString();
+                result.Address = ds.Tables[0].Rows[0]["StudentLastName"].ToString();
+                result.Twitter = ds.Tables[0].Rows[0]["StudentLastName"].ToString();
+                result.Facebook = ds.Tables[0].Rows[0]["StudentLastName"].ToString();
+                result.LinkedIn = ds.Tables[0].Rows[0]["StudentLastName"].ToString();
+                result.Skyup = ds.Tables[0].Rows[0]["StudentLastName"].ToString();
+                result.Gender = ds.Tables[0].Rows[0]["StudentLastName"].ToString();
+                result.InstituteName = ds.Tables[0].Rows[0]["StudentLastName"].ToString();
+                result.Twitter = ds.Tables[0].Rows[0]["StudentLastName"].ToString();
+                result.Twitter = ds.Tables[0].Rows[0]["StudentLastName"].ToString();
+                result.Twitter = ds.Tables[0].Rows[0]["StudentLastName"].ToString();
+                result.ORG_ID = Convert.ToInt32(ds.Tables[0].Rows[0]["ORG_ID"].ToString());
                 result.Response = MethodResponse.Success;
             }
             else
@@ -58,7 +69,7 @@ namespace Student.Repository.DL
                 result.UserID = Convert.ToInt32(ds.Tables[0].Rows[0]["id"].ToString());
                 result.FirstName = ds.Tables[0].Rows[0]["StudentFirstName"].ToString();
                 result.LastName = ds.Tables[0].Rows[0]["StudentLastName"].ToString();
-                result.OrgID = Convert.ToInt32(ds.Tables[0].Rows[0]["ORGID"].ToString());
+                result.ORG_ID = Convert.ToInt32(ds.Tables[0].Rows[0]["ORGID"].ToString());
                 result.Response = MethodResponse.Success;
             }
             else

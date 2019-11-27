@@ -10,16 +10,19 @@ namespace Student.Models
     {
 
         public int UserID { get; set; }
+        public int ORG_ID { get; set; }
         public string Summary { get; set; }
-        public string FirsName { get; set; }
+        public string FirstName { get; set; }
         public string LastName { get; set; }
         public string ClassName { get; set; }
         public string Courses { get; set; }
         public string Batch { get; set; }
         public string Gender { get; set; }
+        public List<SelectListItem> GenderList = new List<SelectListItem>();
         public string Email { get; set; }
         public string MobilePhone { get; set; }
         public string Address { get; set; }
+        public string InstituteName { get; set; }
         public string LinkedIn { get; set; }
         public string Facebook { get; set; }
         public string Twitter { get; set; }

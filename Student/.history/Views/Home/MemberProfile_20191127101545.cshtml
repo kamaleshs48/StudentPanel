@@ -3,107 +3,6 @@
     Layout = "~/Views/Shared/_LayoutMain.cshtml";
 }
 @model Student.Models.ProfileModels
-
-
-<script>
-
-
-    function btnSaveBasic() {
-
-    }
-    function btnSaveSocial()
-    {
-        var _Flag = true;
-        if ($("#FirstName").val() == '')
-        {
-            $("#FirstName").addClass('error');
-            _Flag = false;
-        }
-        if ($("#LastName").val() == '') {
-            $("#LastName").addClass('error');
-            _Flag = false;
-        }
-        if ($("#InstituteName").val() == '') {
-            $("#InstituteName").addClass('error');
-            _Flag = false;
-        }
-        if ($("#Gender").val() == '') {
-            $("#Gender").addClass('error');
-            _Flag = false;
-        }
-        if(_Flag==false)
-        {
-            return
-        }
-        var _Data = {
-            'FirstName': $("#FirstName").val(),
-            'LastName': $("#LastName").val(),
-            'InstituteName': $("#InstituteName").val(),
-            'Gender': $("#Gender").val(),
-        };
-
-
-        $.ajax({
-            type: "POST",
-            url: '',
-            data: _Data, // serializes the form's elements.
-            success: function (data) {
-              //  alert(data); // show response from the php script.
-            }
-        });
-
-
-
-
-    }
-
-    function btnSaveSocial() {
-        var _Flag = true;
-        if ($("#FirstName").val() == '') {
-            $("#FirstName").addClass('error');
-            _Flag = false;
-        }
-        if ($("#LastName").val() == '') {
-            $("#LastName").addClass('error');
-            _Flag = false;
-        }
-        if ($("#InstituteName").val() == '') {
-            $("#InstituteName").addClass('error');
-            _Flag = false;
-        }
-        if ($("#Gender").val() == '') {
-            $("#Gender").addClass('error');
-            _Flag = false;
-        }
-        if (_Flag == false) {
-            return
-        }
-        var _Data = {
-            'FirstName': $("#FirstName").val(),
-            'LastName': $("#LastName").val(),
-            'InstituteName': $("#InstituteName").val(),
-            'Gender': $("#Gender").val(),
-        };
-
-
-        $.ajax({
-            type: "POST",
-            url: '',
-            data: _Data, // serializes the form's elements.
-            success: function (data) {
-                //  alert(data); // show response from the php script.
-            }
-        });
-
-
-
-
-    }
-
-
-</script>
-
-
 <input data-val="true" data-val-number="The field MemberId must be a number." data-val-required="The MemberId field is required." id="MemberId" name="MemberId" type="hidden" value="10843">
 <div class="card" id="profile-main">
     <div class="pm-overview c-overflow" tabindex="1" style="overflow: hidden; outline: none;">
@@ -179,7 +78,7 @@
 
                     </div>
                     <div class="m-t-10">
-                        <button class="btn btn-primary btn-sm waves-effect waves-effect" id="btnBio" onclick="btnSaveBio()">Save</button>
+                        <button class="btn btn-primary btn-sm waves-effect waves-effect" id="btnBio">Save</button>
                         <button data-pmb-action="reset" class="btn btn-link btn-sm waves-effect waves-effect">Cancel</button>
                     </div>
                 </div>
@@ -200,7 +99,7 @@
                 <div class="pmbb-view" id="basview">
                     <dl class="dl-horizontal">
                         <dt>First Name:</dt>
-                        <dd><span id="spanName">@Model.FirstName</span></dd>
+                        <dd><span id="spanName">@Model.FirsName</span></dd>
                     </dl>
 
                     <dl class="dl-horizontal">
@@ -208,12 +107,12 @@
                         <dd><span id="spanLastName">@Model.LastName</span></dd>
                     </dl>
                     <dl class="dl-horizontal">
-                        <dt>Institute Name</dt>
-                        <dd><span id="spanCompany">@Model.InstituteName    </span></dd>
+                        <dt>Company</dt>
+                        <dd><span id="spanCompany"></span></dd>
                     </dl>
                     <dl class="dl-horizontal">
                         <dt>Gender</dt>
-                        <dd><span id="spanGenderName">@Model.Gender</span></dd>
+                        <dd><span id="spanGenderName">----</span></dd>
 
                     </dl>
                 </div>
@@ -223,8 +122,7 @@
                         <dt class="p-t-10">First Name:</dt>
                         <dd>
                             <div class="fg-line">
-                                @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
-
+                                <input class="form-control" data-val="true" data-val-length="The field Full Name must be a string with a maximum length of 50." data-val-length-max="50" data-val-required="Please enter name" id="Name" name="Name" type="text" value="@Model.FirsName">
                             </div>
 
                         </dd>
@@ -234,7 +132,7 @@
                         <dt class="p-t-10">Last Name:</dt>
                         <dd>
                             <div class="fg-line">
-                                @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+                                <input class="form-control" data-val="true" data-val-length="The field Designation must be a string with a maximum length of 100." data-val-length-max="100" id="Designation" name="Designation" type="text" value="@Model.LastName">
                             </div>
                         </dd>
                     </dl>
@@ -242,7 +140,7 @@
                         <dt class="p-t-10">Company</dt>
                         <dd>
                             <div class="fg-line">
-                                @Html.TextBoxFor(m => m.InstituteName, new { @class = "form-control" })
+                                <input class="form-control" data-val="true" data-val-length="The field Company must be a string with a maximum length of 250." data-val-length-max="250" id="Company" name="Company" type="text" value="">
                             </div>
                         </dd>
                     </dl>
@@ -250,15 +148,18 @@
                         <dt class="p-t-10">Gender</dt>
                         <dd>
                             <div class="fg-line">
-                                @Html.DropDownListFor(m => m.Gender, Model.GenderList, "", new { @class = "form-control" })
-
+                                <select class="form-control placeholder" data-val="true" data-val-number="The field GenderId must be a number." id="GenderId" name="GenderId">
+                                    <option value="">- Select Gender -</option>
+                                    <option value="1">Male</option>
+                                    <option value="2">Female</option>
+                                </select>
 
 
                             </div>
                         </dd>
                     </dl>
                     <div class="m-t-30">
-                        <button class="btn btn-primary btn-sm waves-effect waves-effect" id="btnBasic" onclick="btnSaveBasic()">Save</button>
+                        <button class="btn btn-primary btn-sm waves-effect waves-effect" id="btnBasic">Save</button>
                         <button data-pmb-action="reset" class="btn btn-link btn-sm waves-effect waves-effect">Cancel</button>
                     </div>
                 </div>
@@ -289,25 +190,25 @@
                     <dl class="dl-horizontal">
                         <dt>Location</dt>
                         <dd>
-                            <span id="spanCurrentLocation">@Model.Address</span>
+                            <span id="spanCurrentLocation"></span>
                         </dd>
                     </dl>
                     <dl class="dl-horizontal">
                         <dt>LinkedIn</dt>
-                        <dd><span id="spanLinkedIn">@Model.LinkedIn</span></dd>
+                        <dd><span id="spanLinkedIn"></span></dd>
                     </dl>
 
                     <dl class="dl-horizontal">
                         <dt>Facebook</dt>
-                        <dd><span id="spanFacebook">@Model.Facebook</span></dd>
+                        <dd><span id="spanFacebook"></span></dd>
                     </dl>
                     <dl class="dl-horizontal">
                         <dt>Twitter</dt>
-                        <dd><span id="spanTwitter">@Model.Twitter</span></dd>
+                        <dd><span id="spanTwitter"></span></dd>
                     </dl>
                     <dl class="dl-horizontal">
                         <dt>Skype</dt>
-                        <dd><span id="spanSkype">@Model.Skyup</span></dd>
+                        <dd><span id="spanSkype"></span></dd>
                     </dl>
 
                 </div>
@@ -318,8 +219,7 @@
                         <dt class="p-t-10">Mobile Phone</dt>
                         <dd>
                             <div class="fg-line">
-
-                                @Html.TextBoxFor(m => m.MobilePhone, new { @class = "form-control" })
+                                <input class="form-control" data-val="true" data-val-length="The field ContactNo must be a string with a maximum length of 20." data-val-length-max="20" data-val-required="Please enter your mobile number" id="ContactNo" name="ContactNo" type="text" value="+91-7042771791">
                             </div>
                         </dd>
                     </dl>
@@ -327,7 +227,8 @@
                         <dt class="p-t-10">Email Address</dt>
                         <dd>
                             <div class="fg-line">
-                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                <input data-val="true" data-val-length="The field Email must be a string with a maximum length of 50." data-val-length-max="50" data-val-regex="Please enter a valid e-mail adress" data-val-required="Please enter your email id" id="Email" name="Email" type="hidden" value="@Model.Email">
+                                <input class="form-control" disabled="disabled" id="Email" maxlength="200" name="Email" readonly="readonly" type="text" value="@Model.Email">
                             </div>
                         </dd>
                     </dl>
@@ -335,38 +236,34 @@
                         <dt>Location</dt>
                         <dd>
                             <div class="fg-line">
-                                @Html.TextBoxFor(m => m.Address, new { @class = "form-control" })
+                                <input class="form-control" data-val="true" data-val-length="The field Current Location must be a string with a maximum length of 1000." data-val-length-max="1000" id="CurrentLocation" maxlength="200" name="CurrentLocation" type="text" value="">
                             </div>
                         </dd>
                     </dl>
                     <dl class="dl-horizontal">
                         <dt>LinkedIn</dt>
                         <dd>
-                            @Html.TextBoxFor(m => m.LinkedIn, new { @class = "form-control" })
-                        </dd>
+                            <input class="form-control" id="LinkedIn" name="LinkedIn" type="text" value=""></dd>
                     </dl>
 
                     <dl class="dl-horizontal">
                         <dt>Facebook</dt>
                         <dd>
-                            @Html.TextBoxFor(m => m.Facebook, new { @class = "form-control" })
-                        </dd>
+                            <input class="form-control" id="Facebook" name="Facebook" type="text" value=""></dd>
                     </dl>
                     <dl class="dl-horizontal">
                         <dt>Twitter</dt>
                         <dd>
-                            @Html.TextBoxFor(m => m.Twitter, new { @class = "form-control" })
-                        </dd>
+                            <input class="form-control" id="Twitter" name="Twitter" type="text" value=""></dd>
                     </dl>
                     <dl class="dl-horizontal">
                         <dt>Skype</dt>
                         <dd>
-                            @Html.TextBoxFor(m => m.Skyup, new { @class = "form-control" })
-                        </dd>
+                            <input class="form-control" id="Skype" name="Skype" type="text" value=""></dd>
                     </dl>
 
                     <div class="m-t-30">
-                        <button class="btn btn-primary btn-sm waves-effect waves-effect" id="btnContact" onclick="btnSaveSocial()">Save</button>
+                        <button class="btn btn-primary btn-sm waves-effect waves-effect" id="btnContact">Save</button>
                         <button data-pmb-action="reset" class="btn btn-link btn-sm waves-effect waves-effect">Cancel</button>
                     </div>
                 </div>
@@ -378,3 +275,4 @@
 
 
 
+               
