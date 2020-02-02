@@ -29,21 +29,31 @@ namespace Student.Controllers
         [UrlCopyAttribute]
         public ActionResult MemberProfile()
         {
-            ResponseModels _ResponseModel=new ResponseModels();
+            ResponseModels _ResponseModel = new ResponseModels();
             ProfileModels model = new ProfileModels();
-             if (Session[SessionVariable.LoginUserDetails] != null)
-             {
-                 _ResponseModel = (ResponseModels)Session[SessionVariable.LoginUserDetails];
-                 model.FirstName = _ResponseModel.FirstName;
-                 model.LastName = _ResponseModel.LastName;
-                 model.UserID = _ResponseModel.UserID;
+            if (Session[SessionVariable.LoginUserDetails] != null)
+            {
+                _ResponseModel = (ResponseModels)Session[SessionVariable.LoginUserDetails];
+                model.FirstName = _ResponseModel.FirstName;
+                model.LastName = _ResponseModel.LastName;
+                model.UserID = _ResponseModel.UserID;
+                model.Address = _ResponseModel.Address;
+                model.Gender = _ResponseModel.Gender;
+                model.MobilePhone = _ResponseModel.MobilePhone;
+                model.Email = _ResponseModel.Email;
+                model.LinkedIn = _ResponseModel.LinkedIn;
+                model.Facebook = _ResponseModel.Facebook;
+                model.Twitter = _ResponseModel.Twitter;
+                model.Skyup = _ResponseModel.Skyup;
+                model.InstituteName = _ResponseModel.InstituteName;
+                model.Discription = _ResponseModel.Discription;
                 Session[SessionVariable.UserID] = _ResponseModel.UserID;
-                 return View(model);
-             }
-             else
-             {
-                 return RedirectToAction("Login");
-             }
+                return View(model);
+            }
+            else
+            {
+                return RedirectToAction("Login");
+            }
         }
 
         [HttpGet]
@@ -70,7 +80,7 @@ namespace Student.Controllers
                         Session[SessionVariable.LoginUserDetails] = result;
                         Session["FirstName"] = result.FirstName;
                         Session[SessionVariable.UserID] = result.UserID;
-                        return RedirectToAction("Index","Test");
+                        return RedirectToAction("Index", "Test");
                     }
                     else
                     {
@@ -78,9 +88,9 @@ namespace Student.Controllers
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                ViewBag.Error=ex.ToString();
+                ViewBag.Error = ex.ToString();
 
             }
             models.InstituteList = clsLoginBL.GetInstituteList();
@@ -146,6 +156,50 @@ namespace Student.Controllers
             }
             return View();
         }
+        public void UpdateDetails(string FirstName, string LastName, string InstituteName, string Gender, string ID)
+        {
+            int a = clsLoginBL.UpdateStudentInfo(FirstName, LastName, InstituteName, Gender, ID);
+            ResponseModels _ResponseModel = new ResponseModels();
+            if (Session[SessionVariable.LoginUserDetails] != null)
+            {
+                _ResponseModel = (ResponseModels)Session[SessionVariable.LoginUserDetails];
+                _ResponseModel.FirstName = FirstName;
+                _ResponseModel.LastName = LastName;
+                _ResponseModel.InstituteName = InstituteName;
+                _ResponseModel.Gender = Gender;
+                Session[SessionVariable.LoginUserDetails] = _ResponseModel;
 
+            }
+        }
+        public void UpdateDiscription(string Diss, string ID)
+        {
+            int a = clsLoginBL.UpdateDiscription(Diss, ID);
+            ResponseModels _ResponseModel = new ResponseModels();
+            if (Session[SessionVariable.LoginUserDetails] != null)
+            {
+                _ResponseModel = (ResponseModels)Session[SessionVariable.LoginUserDetails];
+                _ResponseModel.Discription = Diss;
+                Session[SessionVariable.LoginUserDetails] = _ResponseModel;
+
+            }
+        }
+        public void UpdateContactDetails(string Mobile, string Email, string Location, string Linkdin, string Facebook, string Twitter, string Skype, string id)
+        {
+            int a = clsLoginBL.UpdateContactInfo(Mobile, Email, Location, Linkdin, Facebook, Twitter, Skype, id);
+            ResponseModels _ResponseModel = new ResponseModels();
+            if (Session[SessionVariable.LoginUserDetails] != null)
+            {
+                _ResponseModel = (ResponseModels)Session[SessionVariable.LoginUserDetails];
+                _ResponseModel.MobilePhone = Mobile;
+                _ResponseModel.Email = Email;
+                _ResponseModel.Address = Location;
+                _ResponseModel.LinkedIn = Linkdin;
+                _ResponseModel.Facebook = Facebook;
+                _ResponseModel.Twitter = Twitter;
+                _ResponseModel.Skyup = Skype;
+                Session[SessionVariable.LoginUserDetails] = _ResponseModel;
+
+            }
+        }
     }
 }

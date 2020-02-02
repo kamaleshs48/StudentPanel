@@ -16,12 +16,23 @@ namespace Student.Repository.BL
         }
         public static ResponseModels ForgotPassword(ForgotPasswordModels models)
         {
-            return   clsLoginDL.ForgotPassword (models);
+            return clsLoginDL.ForgotPassword(models);
         }
         public static List<SelectListItem> GetInstituteList()
         {
             return clsLoginDL.GetInstituteList();
         }
-
+        public static int UpdateStudentInfo(string Fname, string Lname, string institute, string gender, string id)
+        {
+            return clsLoginDL.UpdateStudentInfo(Fname, Lname, institute, gender, id);
+        }
+        public static int UpdateDiscription(string Diss, string id)
+        {
+            return clsLoginDL.UpdateDiscription(Diss, id);
+        }
+        public static int UpdateContactInfo(string Mobile, string Email, string Location, string Linkdin, string Facebook, string Twitter, string Skype, string id)
+        {
+            return clsLoginDL.UpdateContactInfo(Mobile, Email, Location, Linkdin, Facebook, Twitter, Skype, id);
+        }
     }
 }

@@ -18,11 +18,16 @@ namespace Student.Models
         public string Courses { get; set; }
         public string Batch { get; set; }
         public string Gender { get; set; }
-        public List<SelectListItem> GenderList = new List<SelectListItem>();
+        public List<SelectListItem> GenderList = new List<SelectListItem>
+        {
+            new SelectListItem {Value="Male",Text="Male" },
+            new SelectListItem {Value="Female",Text="Female" }
+        };
         public string Email { get; set; }
         public string MobilePhone { get; set; }
         public string Address { get; set; }
         public string InstituteName { get; set; }
+        public string Discription { get; set; }
         public string LinkedIn { get; set; }
         public string Facebook { get; set; }
         public string Twitter { get; set; }

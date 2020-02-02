@@ -1,15 +1,100 @@
 ﻿@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutMain.cshtml";
+    //Layout = null;
     int RowIndex = 1;
 }
+<link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
 @model Student.Models.TestPaperModels
 <div class="row card m-l-5 p-b-10">
     <div class="animated fadeInDown">
         <div class="col-md-12">
-            <div class="feature-classroom table-responsive" tabindex="0" style="overflow: scroll;">
-                <h3>Assign Test Paper</h3>
-                <table class="tableStyleUp">
+            <div class="feature-classroom" tabindex="0">
+                @*<h3>Assign Test Paper</h3>*@
+                <div class="row">
+                    @{
+                        var l2 = Model.PaperList.Select(x => x).Where(x => x.TestStatus != 1);
+                    }
+                    @foreach (var l in l2)
+                    {
+                        <div class="col-md-4">
+                            <div class="panel panel-default">
+                                <div class="panel-heading"><strong>Assign Test Paper</strong></div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="col-md-6">Paper Title:</div>
+                                            <div class="col-md-6">@l.PaperTitle</div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="col-md-6">Total Question:</div>
+                                            <div class="col-md-6">@l.TotalQuestion</div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="col-md-6">Time Duration:</div>
+                                            <div class="col-md-6">@l.TimeDuration</div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="col-md-6">Start Date:</div>
+                                            <div class="col-md-6">@l._PaperDate.ToString("dd/MM/yyyy")</div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="col-md-6">Start Time:</div>
+                                            <div class="col-md-6">@l.PaperStartTime</div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="col-md-6">End Time:</div>
+                                            <div class="col-md-6">@l.PaperEndTime</div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            @{
+                                                if (l.TestStatus == -1)
+                                                {
+                            <a href="#" onclick="OpenTestPaper('@l.EncodedPaperID','@l.EncodedStudentID')" class="btn btn-success waves-effect waves-effect">Start Test</a>
+                                                }
+                                                else if (l.TestStatus == 0)
+                                                {
+                            <a href="#" onclick="OpenTestPaper('@l.EncodedPaperID','@l.EncodedStudentID')" class="btn btn-info waves-effect waves-effect">Resume Test</a>
+                                                }
+                                                else
+                                                {
+                            <a href="#" class="btn btn-info waves-effect waves-effect">Completed Test</a>
+                                                }
+                                            }
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                                                    RowIndex++;
+                                                }
+                    @{
+                        if (RowIndex == 1)
+                        {
+                            <div class="row">
+                                <div align="center"><b>No Record Found</b></div>
+                            </div>
+                        }
+                    }
+                </div>
+
+
+
+                @*<table class="tableStyleUp">
                     <thead>
                         <tr>
                             <th><i class="fa fa-calendar"></i></th>
@@ -34,7 +119,6 @@
                             <th>
                                 End Time
                             </th>
-
                         </tr>
                     </thead>
                     <tbody>
@@ -47,7 +131,6 @@
                             <tr>
                                 <td>@RowIndex</td>
                                 <td>
-
                                     @{
                                         if (l.TestStatus == -1)
                                         {
@@ -69,11 +152,9 @@
                                 <td>@l._PaperDate.ToString("dd/MM/yyyy")</td>
                                 <td>@l.PaperStartTime</td>
                                 <td>@l.PaperEndTime</td>
-
                             </tr>
-                            RowIndex++;
-                        }
-
+                                            RowIndex++;
+                                        }
                         @{
                             if (RowIndex == 1)
                             {
@@ -83,15 +164,13 @@
                             }
                         }
                     </tbody>
-                </table>
+                </table>*@
             </div>
         </div>
         <!--left conent ends-->
         @*<input type="button" onclick="GoOutFullscreen()" value="ss" />*@
-
     </div>
 </div>
-
 <script>
     function OpenTestPaper(pid, sid) {
 

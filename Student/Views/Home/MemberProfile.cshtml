@@ -6,49 +6,69 @@
 
 
 <script>
+    function btnSaveDiss()
+    {
+        var _Data = {
+            'Diss': $("#Discription").val(),
+            'ID': $("#UserID").val(),
+        };
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("UpdateDiscription")',
+            data: _Data, // serializes the form's elements.
+            success: function (data) {
+                alert('Data saved successfully.'); // show response from the php script.
+                location.reload();
+            }
+        });
 
+
+    }
 
     function btnSaveBasic() {
 
+        var _Data = {
+            'FirstName': $("#FirstName").val(),
+            'LastName': $("#LastName").val(),
+            'InstituteName': $("#InstituteName").val(),
+            'Gender': $("#Gender").val(),
+            'ID': $("#UserID").val(),
+        };
+
+
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("UpdateDetails")',
+            data: _Data, // serializes the form's elements.
+            success: function (data) {
+                alert('Data saved successfully.'); // show response from the php script.
+                location.reload();
+            }
+        });
+
+
     }
+
     function btnSaveSocial()
     {
-        var _Flag = true;
-        if ($("#FirstName").val() == '')
-        {
-            $("#FirstName").addClass('error');
-            _Flag = false;
-        }
-        if ($("#LastName").val() == '') {
-            $("#LastName").addClass('error');
-            _Flag = false;
-        }
-        if ($("#InstituteName").val() == '') {
-            $("#InstituteName").addClass('error');
-            _Flag = false;
-        }
-        if ($("#Gender").val() == '') {
-            $("#Gender").addClass('error');
-            _Flag = false;
-        }
-        if(_Flag==false)
-        {
-            return
-        }
         var _Data = {
-            'FirstName': $("#FirstName").val(),
-            'LastName': $("#LastName").val(),
-            'InstituteName': $("#InstituteName").val(),
-            'Gender': $("#Gender").val(),
+            'Mobile': $("#MobilePhone").val(),
+            'Email': $("#Email").val(),
+            'Location': $("#Address").val(),
+            'Linkdin': $("#LinkedIn").val(),
+            'Facebook': $("#Facebook").val(),
+            'Twitter': $("#Twitter").val(),
+            'Skype': $("#Skyup").val(),
+            'id': $("#UserID").val(),
         };
-
 
         $.ajax({
             type: "POST",
-            url: '',
+            url: '@Url.Action("UpdateContactDetails")',
             data: _Data, // serializes the form's elements.
             success: function (data) {
-              //  alert(data); // show response from the php script.
+                alert('Data saved successfully.'); // show response from the php script.
+                location.reload();
             }
         });
 
@@ -56,53 +76,9 @@
 
 
     }
-
-    function btnSaveSocial() {
-        var _Flag = true;
-        if ($("#FirstName").val() == '') {
-            $("#FirstName").addClass('error');
-            _Flag = false;
-        }
-        if ($("#LastName").val() == '') {
-            $("#LastName").addClass('error');
-            _Flag = false;
-        }
-        if ($("#InstituteName").val() == '') {
-            $("#InstituteName").addClass('error');
-            _Flag = false;
-        }
-        if ($("#Gender").val() == '') {
-            $("#Gender").addClass('error');
-            _Flag = false;
-        }
-        if (_Flag == false) {
-            return
-        }
-        var _Data = {
-            'FirstName': $("#FirstName").val(),
-            'LastName': $("#LastName").val(),
-            'InstituteName': $("#InstituteName").val(),
-            'Gender': $("#Gender").val(),
-        };
-
-
-        $.ajax({
-            type: "POST",
-            url: '',
-            data: _Data, // serializes the form's elements.
-            success: function (data) {
-                //  alert(data); // show response from the php script.
-            }
-        });
-
-
-
-
-    }
-
 
 </script>
-
+@Html.HiddenFor(m=>m.UserID)
 
 <input data-val="true" data-val-number="The field MemberId must be a number." data-val-required="The MemberId field is required." id="MemberId" name="MemberId" type="hidden" value="10843">
 <div class="card" id="profile-main">
@@ -137,7 +113,7 @@
 
 
             <div class="pmo-stat">
-                <h2 class="m-0 c-white">@Model.FirsName </h2>
+                <h2 class="m-0 c-white">@Model.FirstName </h2>
                 <small><span id="DesignationDis"></span></small>
             </div>
         </div>
@@ -170,16 +146,17 @@
             </div>
             <div class="pmbb-body p-l-30">
                 <div class="pmbb-view" id="bview">
-                    <span style="color: #bbb5b5">Describe Yourself...</span>
+                    <span style="color: #bbb5b5;white-space:pre-line!important">
+                    @Model.Discription
+                    </span>
                 </div>
 
                 <div class="pmbb-edit" id="bedit">
                     <div class="fg-line">
-                        <textarea class="form-control" cols="20" data-val="true" data-val-length="The field Bio must be a string with a maximum length of 1000." data-val-length-max="1000" id="Biography" name="Biography" placeholder="Summary..." rows="3"></textarea>
-
+                        @Html.TextAreaFor(m => m.Discription, new { @class = "form-control", @placeholder = "Summary...", @rows = "3" })
                     </div>
                     <div class="m-t-10">
-                        <button class="btn btn-primary btn-sm waves-effect waves-effect" id="btnBio" onclick="btnSaveBio()">Save</button>
+                        <button class="btn btn-primary btn-sm waves-effect waves-effect" id="btnBio" onclick="btnSaveDiss()">Save</button>
                         <button data-pmb-action="reset" class="btn btn-link btn-sm waves-effect waves-effect">Cancel</button>
                     </div>
                 </div>
@@ -242,7 +219,7 @@
                         <dt class="p-t-10">Company</dt>
                         <dd>
                             <div class="fg-line">
-                                @Html.TextBoxFor(m => m.InstituteName, new { @class = "form-control" })
+                                @Html.TextBoxFor(m => m.InstituteName, new { @class = "form-control",@readonly=true })
                             </div>
                         </dd>
                     </dl>
@@ -250,9 +227,7 @@
                         <dt class="p-t-10">Gender</dt>
                         <dd>
                             <div class="fg-line">
-                                @Html.DropDownListFor(m => m.Gender, Model.GenderList, "", new { @class = "form-control" })
-
-
+                                @Html.DropDownListFor(m => m.Gender, Model.GenderList, "Select", new { @class = "form-control" })
 
                             </div>
                         </dd>
@@ -327,7 +302,7 @@
                         <dt class="p-t-10">Email Address</dt>
                         <dd>
                             <div class="fg-line">
-                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control",@readonly=true })
                             </div>
                         </dd>
                     </dl>
