@@ -189,7 +189,12 @@ namespace Student.Repository.DL
                         _PaperDate = Convert.ToDateTime(dr["PaperDate"].ToString()),
                         PaperStartTime = Convert.ToDateTime(dr["StartTime"].ToString()).ToString("hh:mm tt"),
                         PaperEndTime = Convert.ToDateTime(dr["PaperEndDate"].ToString()).ToString("dd/MM/yy") + " " + Convert.ToDateTime(dr["EndTime"].ToString()).ToString("hh:mm tt"),
-                        PaperID = Convert.ToInt32(dr["Paper_ID"].ToString())
+                        PaperID = Convert.ToInt32(dr["Paper_ID"].ToString()),
+                        IsStarted = Convert.ToInt32(dr["IsStarted"].ToString()),
+                        IsExpired = Convert.ToInt32(dr["IsExpired"].ToString()),
+                        IsComming = Convert.ToInt32(dr["IsComming"].ToString())
+
+
                     });
                 }
             }

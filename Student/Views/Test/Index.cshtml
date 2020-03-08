@@ -60,17 +60,21 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             @{
-                                                if (l.TestStatus == -1)
+                                                if (l.TestStatus == -1 && l.IsStarted == 1)
                                                 {
-                            <a href="#" onclick="OpenTestPaper('@l.EncodedPaperID','@l.EncodedStudentID')" class="btn btn-success waves-effect waves-effect">Start Test</a>
+                                                    <a href="#" onclick="OpenTestPaper('@l.EncodedPaperID','@l.EncodedStudentID')" class="btn btn-success waves-effect waves-effect">Start Test</a>
                                                 }
-                                                else if (l.TestStatus == 0)
+                                                else if (l.TestStatus == 0 && l.IsStarted == 1)
                                                 {
-                            <a href="#" onclick="OpenTestPaper('@l.EncodedPaperID','@l.EncodedStudentID')" class="btn btn-info waves-effect waves-effect">Resume Test</a>
+                                                    <a href="#" onclick="OpenTestPaper('@l.EncodedPaperID','@l.EncodedStudentID')" class="btn btn-info waves-effect waves-effect">Resume Test</a>
                                                 }
-                                                else
+                                                else if (l.IsComming == 1)
                                                 {
-                            <a href="#" class="btn btn-info waves-effect waves-effect">Completed Test</a>
+                                                    <a href="#" class="btn btn-info waves-effect waves-effect">Test start ASAP</a>
+                                                }
+                                                else if (l.IsExpired == 1)
+                                                {
+                                                    <a href="#" class="btn btn-warning waves-effect waves-effect">Test Expired</a>
                                                 }
                                             }
                                         </div>
@@ -79,9 +83,9 @@
                                 </div>
                             </div>
                         </div>
-                        
-                                                    RowIndex++;
-                                                }
+
+                        RowIndex++;
+                    }
                     @{
                         if (RowIndex == 1)
                         {
@@ -95,76 +99,76 @@
 
 
                 @*<table class="tableStyleUp">
-                    <thead>
-                        <tr>
-                            <th><i class="fa fa-calendar"></i></th>
-                            <th>
-                                <i class="fa fa-chevron-down"></i>
-                            </th>
-                            <th>
-                                Paper Title
-                            </th>
-                            <th>
-                                Total Question
-                            </th>
-                            <th>
-                                Time Duration
-                            </th>
-                            <th>
-                                Start Date
-                            </th>
-                            <th>
-                                Start Time
-                            </th>
-                            <th>
-                                End Time
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @{
-                            var l1 = Model.PaperList.Select(x => x).Where(x => x.TestStatus != 1);
-                        }
-                        @foreach (var l in l1)
-                        {
-
+                        <thead>
                             <tr>
-                                <td>@RowIndex</td>
-                                <td>
-                                    @{
-                                        if (l.TestStatus == -1)
-                                        {
-                                            <a href="#" onclick="OpenTestPaper('@l.EncodedPaperID','@l.EncodedStudentID')" class="btn btn-success waves-effect waves-effect">Start Test</a>
-                                        }
-                                        else if (l.TestStatus == 0)
-                                        {
-                                            <a href="#" onclick="OpenTestPaper('@l.EncodedPaperID','@l.EncodedStudentID')" class="btn btn-info waves-effect waves-effect">Resume Test</a>
-                                        }
-                                        else
-                                        {
-                                            <a href="#" class="btn btn-info waves-effect waves-effect">Completed Test</a>
-                                        }
-                                    }
-                                </td>
-                                <td>@l.PaperTitle</td>
-                                <td>@l.TotalQuestion</td>
-                                <td>@l.TimeDuration</td>
-                                <td>@l._PaperDate.ToString("dd/MM/yyyy")</td>
-                                <td>@l.PaperStartTime</td>
-                                <td>@l.PaperEndTime</td>
+                                <th><i class="fa fa-calendar"></i></th>
+                                <th>
+                                    <i class="fa fa-chevron-down"></i>
+                                </th>
+                                <th>
+                                    Paper Title
+                                </th>
+                                <th>
+                                    Total Question
+                                </th>
+                                <th>
+                                    Time Duration
+                                </th>
+                                <th>
+                                    Start Date
+                                </th>
+                                <th>
+                                    Start Time
+                                </th>
+                                <th>
+                                    End Time
+                                </th>
                             </tr>
-                                            RowIndex++;
-                                        }
-                        @{
-                            if (RowIndex == 1)
-                            {
-                                <tr>
-                                    <td colspan="8" align="center"><b>No Record Found</b></td>
-                                </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                var l1 = Model.PaperList.Select(x => x).Where(x => x.TestStatus != 1);
                             }
-                        }
-                    </tbody>
-                </table>*@
+                            @foreach (var l in l1)
+                            {
+
+                                <tr>
+                                    <td>@RowIndex</td>
+                                    <td>
+                                        @{
+                                            if (l.TestStatus == -1)
+                                            {
+                                                <a href="#" onclick="OpenTestPaper('@l.EncodedPaperID','@l.EncodedStudentID')" class="btn btn-success waves-effect waves-effect">Start Test</a>
+                                            }
+                                            else if (l.TestStatus == 0)
+                                            {
+                                                <a href="#" onclick="OpenTestPaper('@l.EncodedPaperID','@l.EncodedStudentID')" class="btn btn-info waves-effect waves-effect">Resume Test</a>
+                                            }
+                                            else
+                                            {
+                                                <a href="#" class="btn btn-info waves-effect waves-effect">Completed Test</a>
+                                            }
+                                        }
+                                    </td>
+                                    <td>@l.PaperTitle</td>
+                                    <td>@l.TotalQuestion</td>
+                                    <td>@l.TimeDuration</td>
+                                    <td>@l._PaperDate.ToString("dd/MM/yyyy")</td>
+                                    <td>@l.PaperStartTime</td>
+                                    <td>@l.PaperEndTime</td>
+                                </tr>
+                                                RowIndex++;
+                                            }
+                            @{
+                                if (RowIndex == 1)
+                                {
+                                    <tr>
+                                        <td colspan="8" align="center"><b>No Record Found</b></td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>*@
             </div>
         </div>
         <!--left conent ends-->
@@ -207,5 +211,12 @@
             }
         }
     }
+
+
+    $(document).ready(function () {
+               setTimeout(function(){
+           window.location.reload(1);
+        }, 120000);
+    })
 
 </script>

@@ -81,6 +81,12 @@ namespace Student.Models
         public int TestStatus { get; set; }
         public int IsShowReport { get; set; }
 
+
+        public int IsStarted { get; set; }
+        public int IsExpired { get; set; }
+        public int IsComming { get; set; }
+
+
         public List<TestPaperModels> PaperList = new List<TestPaperModels>();
 
     }

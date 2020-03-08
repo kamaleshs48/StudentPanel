@@ -12,352 +12,358 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/Microsoft.Web.Infrastructure.dll">
-      <publishTime>12/30/2016 12:08:32</publishTime>
+      <publishTime>02/02/2020 12:08:49</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
-      <publishTime>12/30/2016 12:08:30</publishTime>
+      <publishTime>02/02/2020 12:08:49</publishTime>
     </File>
     <File Include="bin/Student.dll">
-      <publishTime>11/25/2019 22:23:01</publishTime>
+      <publishTime>03/08/2020 13:44:55</publishTime>
+    </File>
+    <File Include="bin/Student.dll.config">
+      <publishTime>03/08/2020 13:08:47</publishTime>
     </File>
     <File Include="bin/Student.pdb">
-      <publishTime>11/25/2019 22:23:01</publishTime>
+      <publishTime>03/08/2020 13:44:55</publishTime>
     </File>
     <File Include="bin/System.Net.Http.Formatting.dll">
-      <publishTime>12/30/2016 12:08:36</publishTime>
+      <publishTime>02/02/2020 12:08:49</publishTime>
     </File>
     <File Include="bin/System.Web.Helpers.dll">
-      <publishTime>12/30/2016 12:08:33</publishTime>
+      <publishTime>02/02/2020 12:08:49</publishTime>
     </File>
     <File Include="bin/System.Web.Http.dll">
-      <publishTime>12/30/2016 12:08:38</publishTime>
+      <publishTime>02/02/2020 12:08:49</publishTime>
     </File>
     <File Include="bin/System.Web.Http.WebHost.dll">
-      <publishTime>12/30/2016 12:08:39</publishTime>
+      <publishTime>02/02/2020 12:08:49</publishTime>
     </File>
     <File Include="bin/System.Web.Mvc.dll">
-      <publishTime>12/30/2016 12:08:35</publishTime>
+      <publishTime>02/02/2020 12:08:49</publishTime>
     </File>
     <File Include="bin/System.Web.Razor.dll">
-      <publishTime>12/30/2016 12:08:33</publishTime>
+      <publishTime>02/02/2020 12:08:49</publishTime>
     </File>
     <File Include="bin/System.Web.WebPages.Deployment.dll">
-      <publishTime>12/30/2016 12:08:34</publishTime>
+      <publishTime>02/02/2020 12:08:49</publishTime>
     </File>
     <File Include="bin/System.Web.WebPages.dll">
-      <publishTime>12/30/2016 12:08:34</publishTime>
+      <publishTime>02/02/2020 12:08:49</publishTime>
     </File>
     <File Include="bin/System.Web.WebPages.Razor.dll">
-      <publishTime>12/30/2016 12:08:34</publishTime>
+      <publishTime>02/02/2020 12:08:49</publishTime>
     </File>
     <File Include="Content/css/animate.min.css">
-      <publishTime>12/30/2016 21:08:10</publishTime>
+      <publishTime>02/02/2020 12:08:50</publishTime>
     </File>
     <File Include="Content/css/app.min.1.css">
-      <publishTime>12/30/2016 21:08:10</publishTime>
+      <publishTime>02/02/2020 12:08:50</publishTime>
     </File>
     <File Include="Content/css/app.min.2.css">
-      <publishTime>12/30/2016 21:08:10</publishTime>
+      <publishTime>02/02/2020 12:08:50</publishTime>
     </File>
     <File Include="Content/css/bootstrap-datetimepicker.min.css">
-      <publishTime>12/30/2016 21:08:10</publishTime>
+      <publishTime>02/02/2020 12:08:50</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap.min.css">
+      <publishTime>02/02/2020 12:08:50</publishTime>
     </File>
     <File Include="Content/css/circle.css">
-      <publishTime>01/28/2017 15:49:58</publishTime>
+      <publishTime>02/02/2020 12:08:50</publishTime>
     </File>
     <File Include="Content/css/font-awesome.min.css">
-      <publishTime>12/30/2016 21:08:10</publishTime>
+      <publishTime>02/02/2020 12:08:50</publishTime>
     </File>
     <File Include="Content/css/fullcalendar.min.css">
-      <publishTime>12/30/2016 21:08:10</publishTime>
+      <publishTime>02/02/2020 12:08:50</publishTime>
     </File>
     <File Include="Content/css/material-design-iconic-font.css">
-      <publishTime>12/30/2016 21:08:10</publishTime>
+      <publishTime>02/02/2020 12:08:50</publishTime>
     </File>
     <File Include="Content/css/material-design-iconic-font.min.css">
-      <publishTime>12/30/2016 21:08:10</publishTime>
+      <publishTime>02/02/2020 12:08:50</publishTime>
     </File>
     <File Include="Content/css/public.css">
-      <publishTime>12/30/2016 21:08:10</publishTime>
+      <publishTime>02/02/2020 12:08:50</publishTime>
     </File>
     <File Include="Content/css/Styles.css">
-      <publishTime>03/18/2017 16:24:14</publishTime>
+      <publishTime>02/02/2020 12:08:50</publishTime>
     </File>
     <File Include="Content/css/sweet-alert.css">
-      <publishTime>12/30/2016 21:08:10</publishTime>
+      <publishTime>02/02/2020 12:08:50</publishTime>
     </File>
     <File Include="Content/css/testsCustom.css">
-      <publishTime>12/30/2016 21:08:10</publishTime>
+      <publishTime>02/02/2020 12:08:50</publishTime>
     </File>
     <File Include="Content/fonts/fontawesome-webfont.eot">
-      <publishTime>12/30/2016 21:09:27</publishTime>
+      <publishTime>02/02/2020 12:08:50</publishTime>
     </File>
     <File Include="Content/fonts/fontawesome-webfont.svg">
-      <publishTime>12/30/2016 21:09:27</publishTime>
+      <publishTime>02/02/2020 12:08:51</publishTime>
     </File>
     <File Include="Content/fonts/fontawesome-webfont.ttf">
-      <publishTime>12/30/2016 21:09:27</publishTime>
+      <publishTime>02/02/2020 12:08:51</publishTime>
     </File>
     <File Include="Content/fonts/fontawesome-webfont.woff">
-      <publishTime>12/30/2016 21:09:27</publishTime>
+      <publishTime>02/02/2020 12:08:51</publishTime>
     </File>
     <File Include="Content/fonts/fontawesome-webfont.woff2">
-      <publishTime>12/30/2016 21:09:27</publishTime>
+      <publishTime>02/02/2020 12:08:51</publishTime>
     </File>
     <File Include="Content/fonts/FontAwesome.otf">
-      <publishTime>12/30/2016 21:09:27</publishTime>
+      <publishTime>02/02/2020 12:08:51</publishTime>
     </File>
     <File Include="Content/fonts/index.html">
-      <publishTime>12/30/2016 21:09:27</publishTime>
+      <publishTime>02/02/2020 12:08:51</publishTime>
     </File>
     <File Include="Content/fonts/Material-Design-Iconic-Font.eot">
-      <publishTime>12/30/2016 21:09:27</publishTime>
+      <publishTime>02/02/2020 12:08:51</publishTime>
     </File>
     <File Include="Content/fonts/Material-Design-Iconic-Font.svg">
-      <publishTime>12/30/2016 21:09:27</publishTime>
+      <publishTime>02/02/2020 12:08:51</publishTime>
     </File>
     <File Include="Content/fonts/Material-Design-Iconic-Font.ttf">
-      <publishTime>12/30/2016 21:09:27</publishTime>
+      <publishTime>02/02/2020 12:08:51</publishTime>
     </File>
     <File Include="Content/fonts/Material-Design-Iconic-Font.woff">
-      <publishTime>12/30/2016 21:09:27</publishTime>
+      <publishTime>02/02/2020 12:08:51</publishTime>
     </File>
     <File Include="Content/fonts/Material-Design-Iconic-Font.woff2">
-      <publishTime>12/30/2016 21:09:27</publishTime>
+      <publishTime>02/02/2020 12:08:51</publishTime>
     </File>
     <File Include="Content/fonts/Material-Design-Iconic-Fontf066.ttf">
-      <publishTime>12/30/2016 21:09:27</publishTime>
+      <publishTime>02/02/2020 12:08:51</publishTime>
     </File>
     <File Include="Content/fonts/Roboto-Medium-webfont.ttf">
-      <publishTime>12/30/2016 21:09:27</publishTime>
+      <publishTime>02/02/2020 12:08:51</publishTime>
     </File>
     <File Include="Content/fonts/Roboto/Material-Design-Iconic-Font.eot">
-      <publishTime>12/30/2016 21:09:27</publishTime>
+      <publishTime>02/02/2020 12:08:51</publishTime>
     </File>
     <File Include="Content/fonts/Roboto/Material-Design-Iconic-Font.svg">
-      <publishTime>12/30/2016 21:09:27</publishTime>
+      <publishTime>02/02/2020 12:08:51</publishTime>
     </File>
     <File Include="Content/fonts/Roboto/Material-Design-Iconic-Font.ttf">
-      <publishTime>12/30/2016 21:09:27</publishTime>
+      <publishTime>02/02/2020 12:08:51</publishTime>
     </File>
     <File Include="Content/fonts/Roboto/Material-Design-Iconic-Font.woff">
-      <publishTime>12/30/2016 21:09:27</publishTime>
+      <publishTime>02/02/2020 12:08:51</publishTime>
     </File>
     <File Include="Content/fonts/Roboto/Material-Design-Iconic-Font.woff2">
-      <publishTime>12/30/2016 21:09:27</publishTime>
+      <publishTime>02/02/2020 12:08:51</publishTime>
     </File>
     <File Include="Content/fonts/Roboto/Material-Design-Iconic-Fontf066.ttf">
-      <publishTime>12/30/2016 21:09:27</publishTime>
+      <publishTime>02/02/2020 12:08:51</publishTime>
     </File>
     <File Include="Content/fonts/Roboto/Roboto-Medium-webfont.ttf">
-      <publishTime>12/30/2016 21:09:27</publishTime>
+      <publishTime>02/02/2020 12:08:51</publishTime>
     </File>
     <File Include="Content/fonts/Roboto/Roboto-Medium-webfont.woff">
-      <publishTime>12/30/2016 21:09:27</publishTime>
+      <publishTime>02/02/2020 12:08:51</publishTime>
     </File>
     <File Include="Content/fonts/Roboto/Roboto-Regular-webfont.ttf">
-      <publishTime>12/30/2016 21:09:27</publishTime>
+      <publishTime>02/02/2020 12:08:51</publishTime>
     </File>
     <File Include="Content/fonts/Roboto/roboto-regular-webfont.woff">
-      <publishTime>12/30/2016 21:09:27</publishTime>
+      <publishTime>02/02/2020 12:08:51</publishTime>
     </File>
     <File Include="Content/Image/1.png">
-      <publishTime>12/30/2016 21:09:27</publishTime>
+      <publishTime>02/02/2020 12:08:51</publishTime>
     </File>
     <File Include="Content/Image/2.png">
-      <publishTime>12/30/2016 21:09:27</publishTime>
+      <publishTime>02/02/2020 12:08:51</publishTime>
     </File>
     <File Include="Content/Image/220x95.gif">
-      <publishTime>12/30/2016 21:09:27</publishTime>
+      <publishTime>02/02/2020 12:08:51</publishTime>
     </File>
     <File Include="Content/Image/3.png">
-      <publishTime>12/30/2016 21:09:27</publishTime>
+      <publishTime>02/02/2020 12:08:52</publishTime>
     </File>
     <File Include="Content/Image/4.png">
-      <publishTime>12/30/2016 21:09:27</publishTime>
+      <publishTime>02/02/2020 12:08:52</publishTime>
     </File>
     <File Include="Content/Image/5.png">
-      <publishTime>12/30/2016 21:09:27</publishTime>
+      <publishTime>02/02/2020 12:08:52</publishTime>
     </File>
     <File Include="Content/Image/avatar.png">
-      <publishTime>12/30/2016 21:09:27</publishTime>
+      <publishTime>02/02/2020 12:08:52</publishTime>
     </File>
     <File Include="Content/Image/header.jpg">
-      <publishTime>12/30/2016 21:09:28</publishTime>
+      <publishTime>02/02/2020 12:08:52</publishTime>
     </File>
     <File Include="Content/Image/user_img.png">
-      <publishTime>03/18/2017 16:26:20</publishTime>
+      <publishTime>02/02/2020 12:08:52</publishTime>
     </File>
     <File Include="Content/Image/worldmap.png">
-      <publishTime>12/30/2016 21:09:28</publishTime>
+      <publishTime>02/02/2020 12:08:52</publishTime>
     </File>
     <File Include="Content/img/icons/ellipsis.png">
-      <publishTime>12/30/2016 21:09:28</publishTime>
+      <publishTime>02/02/2020 12:08:52</publishTime>
     </File>
     <File Include="Content/img/icons/search.png">
-      <publishTime>12/30/2016 21:09:28</publishTime>
+      <publishTime>02/02/2020 12:08:52</publishTime>
     </File>
     <File Include="Global.asax">
       <publishTime>12/30/2016 12:08:02</publishTime>
     </File>
     <File Include="Images/logo.png">
-      <publishTime>07/29/2017 12:13:41</publishTime>
+      <publishTime>02/02/2020 12:08:52</publishTime>
     </File>
     <File Include="Images/user_img.png">
-      <publishTime>07/31/2017 21:40:08</publishTime>
+      <publishTime>02/02/2020 12:08:52</publishTime>
     </File>
     <File Include="packages.config">
       <publishTime>12/30/2016 12:08:39</publishTime>
     </File>
     <File Include="Scripts/angular.js">
-      <publishTime>12/30/2016 21:07:14</publishTime>
+      <publishTime>02/02/2020 12:08:52</publishTime>
     </File>
     <File Include="Scripts/app.js">
-      <publishTime>12/30/2016 21:07:14</publishTime>
+      <publishTime>02/02/2020 12:08:52</publishTime>
     </File>
     <File Include="Scripts/bar-chart.js">
-      <publishTime>12/30/2016 21:07:14</publishTime>
+      <publishTime>02/02/2020 12:08:52</publishTime>
     </File>
     <File Include="Scripts/bootstrap-growl.min.js">
-      <publishTime>12/30/2016 21:07:14</publishTime>
+      <publishTime>02/02/2020 12:08:52</publishTime>
     </File>
     <File Include="Scripts/bootstrap.min.js">
-      <publishTime>12/30/2016 21:07:14</publishTime>
+      <publishTime>02/02/2020 12:08:52</publishTime>
     </File>
     <File Include="Scripts/common.js">
-      <publishTime>12/30/2016 21:07:14</publishTime>
+      <publishTime>02/02/2020 12:08:52</publishTime>
     </File>
     <File Include="Scripts/curvedLines.js">
-      <publishTime>12/30/2016 21:07:14</publishTime>
+      <publishTime>02/02/2020 12:08:52</publishTime>
     </File>
     <File Include="Scripts/demo.js">
-      <publishTime>12/30/2016 21:07:14</publishTime>
+      <publishTime>02/02/2020 12:08:52</publishTime>
     </File>
     <File Include="Scripts/fullcalendar.min.js">
-      <publishTime>12/30/2016 21:07:14</publishTime>
+      <publishTime>02/02/2020 12:08:52</publishTime>
     </File>
     <File Include="Scripts/FullScreen.js">
-      <publishTime>05/27/2018 00:01:16</publishTime>
+      <publishTime>02/02/2020 12:08:52</publishTime>
     </File>
     <File Include="Scripts/functions.js">
-      <publishTime>12/30/2016 21:07:14</publishTime>
+      <publishTime>02/02/2020 12:08:52</publishTime>
     </File>
     <File Include="Scripts/jquery.bootstrap.wizard.min.js">
-      <publishTime>12/30/2016 21:07:14</publishTime>
+      <publishTime>02/02/2020 12:08:52</publishTime>
     </File>
     <File Include="Scripts/jquery.easypiechart.min.js">
-      <publishTime>12/30/2016 21:07:14</publishTime>
+      <publishTime>02/02/2020 12:08:53</publishTime>
     </File>
     <File Include="Scripts/jquery.flot.js">
-      <publishTime>12/30/2016 21:07:14</publishTime>
+      <publishTime>02/02/2020 12:08:53</publishTime>
     </File>
     <File Include="Scripts/jquery.flot.pie.js">
-      <publishTime>12/30/2016 21:07:14</publishTime>
+      <publishTime>02/02/2020 12:08:53</publishTime>
     </File>
     <File Include="Scripts/jquery.flot.resize.js">
-      <publishTime>12/30/2016 21:07:14</publishTime>
+      <publishTime>02/02/2020 12:08:53</publishTime>
     </File>
     <File Include="Scripts/jquery.flot.tooltip.min.js">
-      <publishTime>12/30/2016 21:07:14</publishTime>
+      <publishTime>02/02/2020 12:08:53</publishTime>
     </File>
     <File Include="Scripts/jquery.js">
-      <publishTime>12/30/2016 21:07:14</publishTime>
+      <publishTime>02/02/2020 12:08:53</publishTime>
     </File>
     <File Include="Scripts/jquery.min.js">
-      <publishTime>12/30/2016 21:07:15</publishTime>
+      <publishTime>02/02/2020 12:08:53</publishTime>
     </File>
     <File Include="Scripts/jquery.nicescroll.min.js">
-      <publishTime>12/30/2016 21:07:15</publishTime>
+      <publishTime>02/02/2020 12:08:53</publishTime>
     </File>
     <File Include="Scripts/jquery.sparkline.min.js">
-      <publishTime>12/30/2016 21:07:15</publishTime>
+      <publishTime>02/02/2020 12:08:53</publishTime>
     </File>
     <File Include="Scripts/jquery.validate.min.js">
-      <publishTime>12/30/2016 21:07:15</publishTime>
+      <publishTime>02/02/2020 12:08:53</publishTime>
     </File>
     <File Include="Scripts/jquery.validate.unobtrusive.min.js">
-      <publishTime>12/30/2016 21:07:15</publishTime>
+      <publishTime>02/02/2020 12:08:53</publishTime>
     </File>
     <File Include="Scripts/moment.min.js">
-      <publishTime>12/30/2016 21:07:15</publishTime>
+      <publishTime>02/02/2020 12:08:53</publishTime>
     </File>
     <File Include="Scripts/pie-chart.js">
-      <publishTime>11/13/2018 23:18:27</publishTime>
+      <publishTime>02/02/2020 12:08:53</publishTime>
     </File>
     <File Include="Scripts/sweet-alert.min.js">
-      <publishTime>12/30/2016 21:07:15</publishTime>
+      <publishTime>02/02/2020 12:08:53</publishTime>
     </File>
     <File Include="Scripts/waves.min.js">
-      <publishTime>12/30/2016 21:07:14</publishTime>
+      <publishTime>02/02/2020 12:08:53</publishTime>
     </File>
     <File Include="Views/Admin/StudentList.cshtml">
-      <publishTime>01/07/2017 13:02:12</publishTime>
+      <publishTime>02/02/2020 12:08:53</publishTime>
     </File>
     <File Include="Views/Admin/StudentRegistration.cshtml">
-      <publishTime>01/07/2017 13:36:05</publishTime>
+      <publishTime>02/02/2020 12:08:53</publishTime>
     </File>
     <File Include="Views/Home/Batch.cshtml">
-      <publishTime>01/07/2017 13:36:26</publishTime>
+      <publishTime>02/02/2020 12:08:53</publishTime>
     </File>
     <File Include="Views/Home/ChangePassword.cshtml">
-      <publishTime>01/28/2017 18:07:32</publishTime>
+      <publishTime>02/02/2020 12:08:53</publishTime>
     </File>
     <File Include="Views/Home/DashBoard.cshtml">
-      <publishTime>01/07/2017 12:31:05</publishTime>
+      <publishTime>02/02/2020 12:08:53</publishTime>
     </File>
     <File Include="Views/Home/EBooks.cshtml">
-      <publishTime>01/28/2017 17:28:30</publishTime>
+      <publishTime>02/02/2020 12:08:53</publishTime>
     </File>
     <File Include="Views/Home/forgotpassword.cshtml">
-      <publishTime>03/31/2018 13:04:42</publishTime>
+      <publishTime>02/02/2020 12:08:53</publishTime>
     </File>
     <File Include="Views/Home/Login.cshtml">
-      <publishTime>11/22/2019 00:17:55</publishTime>
+      <publishTime>03/08/2020 13:40:25</publishTime>
     </File>
     <File Include="Views/Home/MemberProfile.cshtml">
-      <publishTime>07/31/2017 21:52:49</publishTime>
+      <publishTime>02/02/2020 12:08:53</publishTime>
     </File>
     <File Include="Views/Home/MyDocuments.cshtml">
-      <publishTime>01/28/2017 17:28:45</publishTime>
+      <publishTime>02/02/2020 12:08:53</publishTime>
     </File>
     <File Include="Views/Home/MyTest.cshtml">
-      <publishTime>01/28/2017 17:22:29</publishTime>
+      <publishTime>02/02/2020 12:08:53</publishTime>
     </File>
     <File Include="Views/Home/Register.cshtml">
-      <publishTime>06/03/2017 20:26:36</publishTime>
+      <publishTime>02/02/2020 12:08:53</publishTime>
     </File>
     <File Include="Views/Home/TestReport.cshtml">
-      <publishTime>01/28/2017 17:28:53</publishTime>
+      <publishTime>02/02/2020 12:08:53</publishTime>
     </File>
     <File Include="Views/Live/MySession.cshtml">
-      <publishTime>08/19/2017 13:01:43</publishTime>
+      <publishTime>02/02/2020 12:08:53</publishTime>
     </File>
     <File Include="Views/Live/SessionList.cshtml">
-      <publishTime>11/12/2018 22:43:00</publishTime>
+      <publishTime>02/02/2020 12:08:53</publishTime>
     </File>
     <File Include="Views/Shared/_LayoutMain.cshtml">
-      <publishTime>05/27/2018 19:53:20</publishTime>
+      <publishTime>02/02/2020 12:08:53</publishTime>
     </File>
     <File Include="Views/Test/Completed.cshtml">
-      <publishTime>11/25/2019 22:22:49</publishTime>
+      <publishTime>02/02/2020 12:08:53</publishTime>
     </File>
     <File Include="Views/Test/Index.cshtml">
-      <publishTime>11/25/2019 22:22:14</publishTime>
+      <publishTime>03/08/2020 13:43:42</publishTime>
     </File>
     <File Include="Views/Test/TestReport.cshtml">
-      <publishTime>11/13/2018 23:56:45</publishTime>
+      <publishTime>02/02/2020 12:08:53</publishTime>
     </File>
     <File Include="Views/Test/TestReportByQuestion.cshtml">
-      <publishTime>12/01/2018 12:03:57</publishTime>
+      <publishTime>02/02/2020 12:08:53</publishTime>
     </File>
     <File Include="Views/Web.config">
-      <publishTime>12/30/2016 12:08:02</publishTime>
+      <publishTime>02/02/2020 12:08:53</publishTime>
     </File>
     <File Include="Views/__ViewStart.cshtml">
-      <publishTime>12/30/2016 21:01:50</publishTime>
+      <publishTime>02/02/2020 12:08:53</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>11/16/2019 10:57:52</publishTime>
+      <publishTime>03/08/2020 13:40:45</publishTime>
     </File>
   </ItemGroup>
 </Project>
