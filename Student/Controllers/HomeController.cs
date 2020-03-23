@@ -13,7 +13,7 @@ namespace Student.Controllers
     {
         //
         // GET: /Home/
-
+        // Code change by praveen
         public ActionResult Index()
         {
             return View();
