@@ -5,7 +5,13 @@
     int RowIndex = 1;
 }
 <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+
+
+
+
+
 @model Student.Models.TestPaperModels
+
 <div class="row card m-l-5 p-b-10">
     <div class="animated fadeInDown">
         <div class="col-md-12">
@@ -75,6 +81,7 @@
                                                 else if (l.IsExpired == 1)
                                                 {
                                                     <a href="#" class="btn btn-warning waves-effect waves-effect">Test Expired</a>
+                                                    @*<a href="#" onclick="OpenTestPaper('@l.EncodedPaperID','@l.EncodedStudentID')" class="btn btn-success waves-effect waves-effect">Start Test</a>*@
                                                 }
                                             }
                                         </div>
@@ -182,8 +189,8 @@
             + ', top=0, left=0'
             + ',toolbar=no,scrollbars=no,status=no,menubar=no;fullscreen="yes"';
         var ss = pid + '?SID=' + sid;
-        //   window.open("http://localhost:49931/Exam/ExamInstruction/" + ss, params);
-        window.open("http://e-exam.in/Exam/ExamInstruction/" + ss, params);
+         window.open("@Session["ExamPanelURL"]//Exam/ExamInstruction/" + ss, params);
+       // window.open("http://e-exam.in/Exam/ExamInstruction/" + ss, params);
     }
     function GoOutFullscreen() {
         //  var el = document.documentElement,

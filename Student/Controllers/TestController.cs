@@ -11,7 +11,7 @@ using System.Web.Mvc;
 namespace Student.Controllers
 {
     [UrlCopyAttribute]
-    public class TestController : Controller
+    public class TestController : BaseController
     {
         //
         // GET: /Test/

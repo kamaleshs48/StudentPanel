@@ -208,6 +208,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\moment.min.js" />
     <Content Include="Scripts\pie-chart.js" />
+    <Content Include="Scripts\Speech.js" />
     <Content Include="Scripts\sweet-alert.min.js" />
     <Content Include="Scripts\waves.min.js" />
     <Content Include="Web.config">
@@ -282,6 +283,9 @@
     <Content Include="Views\Test\Completed.cshtml" />
     <Content Include="Views\Test\TestReport.cshtml" />
     <Content Include="Views\Test\TestReportByQuestion.cshtml" />
+    <Content Include="Views\Home\Test.cshtml" />
+    <Content Include="Views\Home\Test2.cshtml" />
+    <Content Include="Views\Home\TestFinal.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

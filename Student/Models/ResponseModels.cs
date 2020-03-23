@@ -22,6 +22,7 @@ namespace Student.Models
     {
         public const string LoginUserDetails = "LoginUserDetails";
         public const string UserID = "UserID";
+        public const string ExamPanelURL = "ExamPanelURL";
         
     }
 

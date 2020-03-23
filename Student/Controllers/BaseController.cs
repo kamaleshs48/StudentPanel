@@ -17,6 +17,7 @@ namespace Student.Controllers
         public BaseController()
         {
             LoginUserID = Convert.ToInt32(System.Web.HttpContext.Current.Session[SessionVariable.UserID].ToString());
+            System.Web.HttpContext.Current.Session[SessionVariable.ExamPanelURL] = System.Configuration.ConfigurationManager.AppSettings["ExamPanelURL"].ToString();
         }
 
        
