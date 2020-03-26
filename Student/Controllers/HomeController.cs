@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Student.Models;
 using Student.Repository.BL;
 using Student.Filters;
+using NReco.VideoConverter;
 
 namespace Student.Controllers
 {
@@ -16,6 +17,11 @@ namespace Student.Controllers
 
         public ActionResult Index()
         {
+
+            var ffMpeg = new NReco.VideoConverter.FFMpegConverter();
+            ffMpeg.ConvertMedia("D:\\Video\\input.mov", "D:\\Video\\output.mp4", Format.mp4);
+
+
             return View();
         }
         public ActionResult DashBoard()
@@ -61,7 +67,7 @@ namespace Student.Controllers
         public ActionResult Login()
         {
             LoginModels models = new LoginModels();
-
+            models.ORG_ID = "10";
             models.InstituteList = clsLoginBL.GetInstituteList();
 
 

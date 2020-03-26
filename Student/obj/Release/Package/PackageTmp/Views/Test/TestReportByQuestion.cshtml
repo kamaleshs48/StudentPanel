@@ -100,26 +100,26 @@
                     <hr />
                     <div class="row">
                         <div class="col-md-6">
-                            <strong>Paper Name</strong>: @Model.PaperName
+                            <strong>Test Paper</strong>: @Model.PaperName
                         </div>
                         <div class="col-md-6">
                             <strong>Student Name</strong>: @Model.StudentName
                         </div>
                     </div>
 
-
+                    <br />
 
 
 
                 </div>
 
 
-            </div>
+          
             <hr />
-            <div class="row">
-                <div class="row" id="QList">
+            <div >
+                <div  id="QList">
 
-                    <div class="row">
+                    <div>
 
 
                         <div class="col-md-12">
@@ -128,16 +128,50 @@
                                     @{int a = 1;}
                                     @foreach (var l in Model._QList)
                                     {
-                                        <tr class="@a">
+                                        <tr class="@a" style="background-color: #9999ff;color:white">
                                             <td style="width: 10%; border-right: solid thin #eeeeee"><strong>Q.N. </strong>@a)</td>
                                             <td style="width: 65%;"> <div class="kkk">  @Html.Raw(@l.Question) </div></td>
 
 
 
                                         </tr>
-                                        <tr>
+                                        if (l.Question_TypeID == 8)
+                                        {
+                                            <tr>
+                                                <td>A</td>
+                                                <td>@Html.Raw(@l.OptionA)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>B</td>
+                                                <td>@Html.Raw(@l.OptionB)</td>
+                                            </tr>
+                                        }
+                                        else
+                                        {
+                                            <tr>
+                                                <td>A</td>
+                                                <td>@Html.Raw(@l.OptionA)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>B</td>
+                                                <td>@Html.Raw(@l.OptionB)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>C</td>
+                                                <td>@Html.Raw(@l.OptionC)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>D</td>
+                                                <td>@Html.Raw(@l.OptionD)</td>
+                                            </tr>
+                                        }
+
+                                        <tr style="background-color:#33ff99;color:white">
                                             <td> <strong>Answer Key</strong> </td>
                                             <td>@l.Answer_Key</td>
+
+
+
                                         </tr>
                                         <tr>
                                             <td><strong>Response Key</strong> </td>
@@ -165,4 +199,4 @@
         </div>
     </div>
 </div>
-
+</div>

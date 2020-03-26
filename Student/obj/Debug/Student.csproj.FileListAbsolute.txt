@@ -15,3 +15,5 @@ D:\Project\GIT HUB\Student\Student\obj\Debug\Student.csprojAssemblyReference.cac
 D:\Project\GIT HUB\Student\Student\obj\Debug\Student.csproj.CopyComplete
 D:\Project\GIT HUB\Student\Student\obj\Debug\Student.dll
 D:\Project\GIT HUB\Student\Student\obj\Debug\Student.pdb
+D:\Project\GIT HUB\Student\Student\bin\NReco.VideoConverter.dll
+D:\Project\GIT HUB\Student\Student\bin\NReco.VideoConverter.xml

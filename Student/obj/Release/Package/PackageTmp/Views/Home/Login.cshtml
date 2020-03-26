@@ -45,6 +45,7 @@
                                 <div class="form-group">
                                     @Html.ValidationSummary()
                                     @ViewBag.Error
+                                    @Html.HiddenFor(m=>m.ORG_ID)
                                 </div>
                                 <div class="form-group">
                                     <p>Institute/Collage Name</p>
@@ -52,8 +53,9 @@
 
                                         <span class="input-group-addon">
                                             <i class="fa fa-institution"></i>
+
                                         </span>
-                                        @Html.DropDownListFor(m => m.ORG_ID, Model.InstituteList,"--Select--", new { @class = "form-control"})
+                                        @Html.DropDownListFor(m => m.ORG_ID, Model.InstituteList,"--Select--", new { @class = "form-control",disabled="disabled"})
                                     </div>
                                 </div>
                                 <div class="form-group">

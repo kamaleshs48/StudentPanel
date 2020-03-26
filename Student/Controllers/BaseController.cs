@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace Student.Controllers
 {
-   
+
     public class BaseController : Controller
     {
         //
@@ -16,10 +16,17 @@ namespace Student.Controllers
         public int LoginUserID;
         public BaseController()
         {
-            LoginUserID = Convert.ToInt32(System.Web.HttpContext.Current.Session[SessionVariable.UserID].ToString());
-            System.Web.HttpContext.Current.Session[SessionVariable.ExamPanelURL] = System.Configuration.ConfigurationManager.AppSettings["ExamPanelURL"].ToString();
+            try
+            {
+                LoginUserID = Convert.ToInt32(System.Web.HttpContext.Current.Session[SessionVariable.UserID].ToString());
+                System.Web.HttpContext.Current.Session[SessionVariable.ExamPanelURL] = System.Configuration.ConfigurationManager.AppSettings["ExamPanelURL"].ToString();
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
 
-       
+
     }
 }

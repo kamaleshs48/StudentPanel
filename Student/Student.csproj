@@ -42,6 +42,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NReco.VideoConverter">
+      <HintPath>C:\Users\KAMLESH\Downloads\New folder (6)\NReco.VideoConverter.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -180,6 +183,10 @@
     <Content Include="Content\Image\worldmap.png" />
     <Content Include="Content\img\icons\ellipsis.png" />
     <Content Include="Content\img\icons\search.png" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\pe-icon-7-stroke\css\helper.css" />
+    <Content Include="fonts\pe-icon-7-stroke\css\pe-icon-7-stroke.css" />
+    <Content Include="fonts\pe-icon-7-stroke\fonts\Pe-icon-7-strokea93c.svg" />
     <Content Include="Global.asax" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\user_img.png" />
@@ -264,6 +271,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Student.dll.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\K010.ttf" />
+    <Content Include="fonts\pe-icon-7-stroke\fonts\Pe-icon-7-strokea93c.eot" />
+    <Content Include="fonts\pe-icon-7-stroke\fonts\Pe-icon-7-strokea93c.ttf" />
+    <Content Include="fonts\pe-icon-7-stroke\fonts\Pe-icon-7-strokea93c.woff" />
+    <Content Include="fonts\pe-icon-7-stroke\fonts\Pe-icon-7-stroked41d.eot" />
     <None Include="Properties\PublishProfiles\Student.pubxml" />
     <Content Include="Views\Admin\StudentRegistration.cshtml" />
     <Content Include="Views\Home\ChangePassword.cshtml" />

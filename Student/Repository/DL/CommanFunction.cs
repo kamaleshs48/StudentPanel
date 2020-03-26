@@ -247,7 +247,6 @@ namespace Student.Repository.DL
             DataSet ds = SqlHelper.ExecuteDataset(SqlHelper.ConnectionStr(), CommandType.StoredProcedure, "sp_GetStudentPapareList", pr);
             if (ds != null && ds.Tables[0].Rows.Count > 0)
             {
-
                 models.PaperName = ds.Tables[0].Rows[0]["Paper_Name"].ToString();
                 models.Obtain_Marks = ds.Tables[0].Rows[0]["Obtain_Marks"].ToString();
                 models.TotalQuestion = Convert.ToInt32(ds.Tables[0].Rows[0]["Total_Questions"].ToString());
@@ -257,7 +256,6 @@ namespace Student.Repository.DL
                 models.TimeTaken = 50; //Convert.ToInt32(ds.Tables[0].Rows[0]["Duration"].ToString());
                 models.Duration = 15;// Convert.ToInt32(ds.Tables[0].Rows[0][""].ToString());
                 models.leftTime = 20; //Convert.ToInt32(ds.Tables[0].Rows[0][""].ToString());
-
             }
             return models;
         }
