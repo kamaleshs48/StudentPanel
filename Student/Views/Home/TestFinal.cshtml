@@ -46,6 +46,7 @@
             </tr>
             <tr>
                 <td><button id="startRecognizeOnceAsyncButton">Start recognition</button></td>
+                <td><button id="SecondRecognizeOnceAsyncButton">Second Start recognition</button></td>
                 <td><button id="stopRecognizeOnceAsyncButton">Stop recognition</button></td>
             </tr>
             <tr>
@@ -57,9 +58,7 @@
 
 
 
-    <video width="400" controls autoplay>
-        <source src="@Url.Content("~/Content/output.mp4")" type="video/mp4">
-    </video>
+   
     <!-- </uidiv> -->
     <!-- <speechsdkref> -->
     <!-- Speech SDK reference sdk. -->
@@ -107,6 +106,7 @@
         document.addEventListener("DOMContentLoaded", function () {
             startRecognizeOnceAsyncButton = document.getElementById("startRecognizeOnceAsyncButton");
             stopRecognizeOnceAsyncButton = document.getElementById("stopRecognizeOnceAsyncButton");
+            SecondRecognizeOnceAsyncButton= document.getElementById("SecondRecognizeOnceAsyncButton");
             subscriptionKey = document.getElementById("subscriptionKey");
             serviceRegion = document.getElementById("serviceRegion");
             phraseDiv = document.getElementById("phraseDiv");
@@ -162,7 +162,10 @@
                 console.log('*************** Stop');
             });
 
-
+             SecondRecognizeOnceAsyncButton.addEventListener("click", function () {
+                recognizer.startContinuousRecognitionAsync();
+                console.log('*************** Stop');
+            });
 
             if (!!window.SpeechSDK) {
                 SpeechSDK = window.SpeechSDK;
