@@ -189,6 +189,7 @@
     <Content Include="fonts\pe-icon-7-stroke\fonts\Pe-icon-7-strokea93c.svg" />
     <Content Include="Global.asax" />
     <Content Include="Images\logo.png" />
+    <Content Include="Images\Praveen.jpg" />
     <Content Include="Images\user_img.png" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\app.js" />
@@ -301,6 +302,7 @@
     <Content Include="Views\Home\Test.cshtml" />
     <Content Include="Views\Home\Test2.cshtml" />
     <Content Include="Views\Home\TestFinal.cshtml" />
+    <Content Include="Views\Test\Unattended.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

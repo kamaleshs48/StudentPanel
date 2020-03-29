@@ -132,7 +132,7 @@
         </ul>
         <!-- Top Search Content -->
         <div id="top-search-wrap">
-            <form class="navbar-form">
+            <form class="navbar-form" enctype="multipart/form-data">
                 <input type="text" placeholder="find courses, articles and events..." class="form-control" id="txtHSearch" name="q" onkeypress="return Headermenukeypress(event);">
                 <i id="top-search-close">×</i>
 
@@ -149,9 +149,14 @@
                         </div>*@
                         <div class="profile-pic">
                             <div class="c100 p5 green picuser p30">
-
-                                <img id="Profile" style="width: 101px; height: 102px; z-index: 999; padding: 9px; position: absolute;"
-                                    src="@Url.Content("~/Content/image/user_img.png")" class="img-circle">
+                                @if (HttpContext.Current.Session["ProfileImg"] != null)
+                                {
+                                    <img id="Profile" style="width: 101px; height: 102px; z-index: 999; padding: 9px; position: absolute;" src="@Url.Content("~")@HttpContext.Current.Session["ProfileImg"]" class="img-circle">
+                                }
+                                else
+                                {
+                                <img id="Profile" style="width: 101px; height: 102px; z-index: 999; padding: 9px; position: absolute;" src="@Url.Content("~/Content/image/user_img.png")" class="img-circle">
+                                }
                                 <div class="slice">
                                     <div class="bar" id="b2" style="border-color: green;"></div>
                                     <div class="fill" id="f2" style="border-color: green;"></div>
@@ -194,6 +199,9 @@
                         <ul>
                             <li>
                                 <a href="@Url.Action("Index", "Test")"><i class="fa fa-question fa-fw"></i>&nbsp; Upcoming Test</a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Unattended", "Test")"><i class="fa fa-square fa-fw"></i>&nbsp; Unattended Test</a>
                             </li>
                             <li>
                                 <a href="@Url.Action("Completed", "Test")"><i class="fa fa-star fa-fw"></i>&nbsp; Completed Test</a>

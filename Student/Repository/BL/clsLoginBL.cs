@@ -26,6 +26,14 @@ namespace Student.Repository.BL
         {
             return clsLoginDL.UpdateStudentInfo(Fname, Lname, institute, gender, id);
         }
+        public static int UpdateProfile(string filename, string id)
+        {
+            return clsLoginDL.UpdateStudentInfo(filename, id);
+        }
+        public static int UpdateProfile(string Oldpass,string newpass, string id)
+        {
+            return clsLoginDL.UpdateStudentInfo(Oldpass,newpass, id);
+        }
         public static int UpdateDiscription(string Diss, string id)
         {
             return clsLoginDL.UpdateDiscription(Diss, id);

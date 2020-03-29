@@ -5,7 +5,13 @@
     int RowIndex = 1;
 }
 <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+
+
+
+
+
 @model Student.Models.TestPaperModels
+
 <div class="row card m-l-5 p-b-10">
     <div class="animated fadeInDown">
         <div class="col-md-12">
@@ -60,23 +66,11 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             @{
-                                                if (l.TestStatus == -1 && l.IsStarted == 1)
-                                                {
-                                                    <a href="#" onclick="OpenTestPaper('@l.EncodedPaperID','@l.EncodedStudentID')" class="btn btn-success waves-effect waves-effect">Start Test</a>
-                                                }
-                                                else if (l.TestStatus == 0 && l.IsStarted == 1)
-                                                {
-                                                    <a href="#" onclick="OpenTestPaper('@l.EncodedPaperID','@l.EncodedStudentID')" class="btn btn-info waves-effect waves-effect">Resume Test</a>
-                                                }
-                                                else if (l.IsComming == 1)
-                                                {
-                                                    <a href="#" class="btn btn-info waves-effect waves-effect">Test start ASAP</a>
-                                                }
-                                                @*else if (l.IsExpired == 1)
+                                                if (l.IsExpired == 1)
                                                 {
                                                     <a href="#" class="btn btn-warning waves-effect waves-effect">Test Expired</a>
-                                                   
-                                                }*@
+                                                    @*<a href="#" onclick="OpenTestPaper('@l.EncodedPaperID','@l.EncodedStudentID')" class="btn btn-success waves-effect waves-effect">Start Test</a>*@
+                                                }
                                             }
                                         </div>
                                     </div>
@@ -99,81 +93,8 @@
 
 
 
-                @*<table class="tableStyleUp">
-                        <thead>
-                            <tr>
-                                <th><i class="fa fa-calendar"></i></th>
-                                <th>
-                                    <i class="fa fa-chevron-down"></i>
-                                </th>
-                                <th>
-                                    Paper Title
-                                </th>
-                                <th>
-                                    Total Question
-                                </th>
-                                <th>
-                                    Time Duration
-                                </th>
-                                <th>
-                                    Start Date
-                                </th>
-                                <th>
-                                    Start Time
-                                </th>
-                                <th>
-                                    End Time
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @{
-                                var l1 = Model.PaperList.Select(x => x).Where(x => x.TestStatus != 1);
-                            }
-                            @foreach (var l in l1)
-                            {
-
-                                <tr>
-                                    <td>@RowIndex</td>
-                                    <td>
-                                        @{
-                                            if (l.TestStatus == -1)
-                                            {
-                                                <a href="#" onclick="OpenTestPaper('@l.EncodedPaperID','@l.EncodedStudentID')" class="btn btn-success waves-effect waves-effect">Start Test</a>
-                                            }
-                                            else if (l.TestStatus == 0)
-                                            {
-                                                <a href="#" onclick="OpenTestPaper('@l.EncodedPaperID','@l.EncodedStudentID')" class="btn btn-info waves-effect waves-effect">Resume Test</a>
-                                            }
-                                            else
-                                            {
-                                                <a href="#" class="btn btn-info waves-effect waves-effect">Completed Test</a>
-                                            }
-                                        }
-                                    </td>
-                                    <td>@l.PaperTitle</td>
-                                    <td>@l.TotalQuestion</td>
-                                    <td>@l.TimeDuration</td>
-                                    <td>@l._PaperDate.ToString("dd/MM/yyyy")</td>
-                                    <td>@l.PaperStartTime</td>
-                                    <td>@l.PaperEndTime</td>
-                                </tr>
-                                                RowIndex++;
-                                            }
-                            @{
-                                if (RowIndex == 1)
-                                {
-                                    <tr>
-                                        <td colspan="8" align="center"><b>No Record Found</b></td>
-                                    </tr>
-                                }
-                            }
-                        </tbody>
-                    </table>*@
             </div>
         </div>
-        <!--left conent ends-->
-        @*<input type="button" onclick="GoOutFullscreen()" value="ss" />*@
     </div>
 </div>
 <script>
@@ -187,13 +108,7 @@
        // window.open("http://e-exam.in/Exam/ExamInstruction/" + ss, params);
     }
     function GoOutFullscreen() {
-        //  var el = document.documentElement,
-        //rfs = el.requestFullscreen
-        //  || el.webkitRequestFullScreen
-        //  || el.mozRequestFullScreen
-        //  || el.msRequestFullscreen
-        //  ;
-
+      
         //  rfs.call(el);
         var elem = document.body; // Make the body go full screen.
         requestFullScreen(elem);
