@@ -14,6 +14,7 @@ namespace Student.Models
         public string Summary { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public string setLogo { get; set; }
         public string ClassName { get; set; }
         public string Courses { get; set; }
         public string Batch { get; set; }

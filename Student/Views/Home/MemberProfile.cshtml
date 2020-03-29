@@ -6,6 +6,57 @@
 
 
 <script>
+    function uploadfile() {
+        console.log('sadasd');
+        $('#UploadImg').click();
+    }
+    function ShowImagePreview(input) {
+        console.log('asdsssssssss');
+        if (!(/\.(jpg|jpeg|png|jfif)$/i).test(input.value)) {
+            alert('You must select an image file only and file must be .jpg,.jpeg,.png,.jfif types');
+            return false;
+        }
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#imgPreview').prop('src', e.target.result);
+                $('#Profile').prop('src', e.target.result);
+            };
+            reader.readAsDataURL(input.files[0]);
+           
+            var fileUpload = $("#UploadImg").get(0);
+            var files = fileUpload.files;
+
+            // Create FormData object
+            var fileData = new FormData();
+
+            // Looping over all files and add it to FormData object
+            for (var i = 0; i < files.length; i++) {
+                fileData.append(files[i].name, files[i]);
+            }
+
+            // Adding one more key to FormData object
+            fileData.append('ID', $("#UserID").val());
+
+            $.ajax({
+                //url: '/Home/UploadFiles',
+                url:'@Url.Action("UploadFiles")',
+                type: "POST",
+                contentType: false, // Not to set any content header
+                processData: false, // Not to process data
+                data: fileData,
+                success: function (result) {
+                    alert(result);
+                    location.reload();
+                },
+                error: function (err) {
+                    alert(err.statusText);
+                }
+            });
+        }
+
+    }
+
     function btnSaveDiss()
     {
         var _Data = {
@@ -91,7 +142,14 @@
                     </div>
                 </div>
                 <a href="#" id="picarea">
+                    @if (!string.IsNullOrEmpty(Model.setLogo))
+                    {
+                    <img id="imgPreview" src="@Url.Content("~/")@Model.setLogo" />
+                    }
+                    else
+                    {
                     <img id="imgPreview" src="@Url.Content("~/images/user_img.png")">
+                    }
                 </a>
 
                 <div class="dropdown pmop-message" id="Imageedit">
@@ -101,11 +159,19 @@
 
                     <div class="dropdown-menu">
                         <a href="#" class="pmop-edit">
-
-                            <input type="file" id="UploadImg" style="background-color: transparent; color: red">
+                            @*<input type="file" id="UploadImg" style="background-color: transparent; color: red">*@
                         </a>
-
+                       <br />
+                        <div class="col-md-6 text-center">
+                            <a onclick="uploadfile()" style="text-decoration:underline;cursor:pointer">Upload Profile</a>
+                            <div style="display:none">
+                                <input type="file" id="UploadImg" style="background-color: transparent; color: red" accept = "image/jpg,image/png,image/jpeg" onchange="ShowImagePreview(this);">
+                                @Html.TextBox("orgLogo", new { @type = "file", @accept = "image/jpg,image/png,image/jpeg", @class = "form-control", @onchange = "ShowImagePreview(this);" })
+                            </div>
+                        </div>
+                        @*<input type="button" id="btnUpload" value="Upload Files" class="btn btn-primary btn-sm" />*@  
                     </div>
+                    
                 </div>
 
 

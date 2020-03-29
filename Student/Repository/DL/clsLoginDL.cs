@@ -39,6 +39,7 @@ namespace Student.Repository.DL
                 result.Gender = ds.Tables[0].Rows[0]["Gender"].ToString();
                 result.Discription = ds.Tables[0].Rows[0]["Discription"].ToString();
                 result.InstituteName = ds.Tables[0].Rows[0]["Institute"].ToString();
+                result.setLogo = ds.Tables[0].Rows[0]["Photo"].ToString();
                 result.ORG_ID = Convert.ToInt32(ds.Tables[0].Rows[0]["ORG_ID"].ToString());
                 result.Response = MethodResponse.Success;
             }
@@ -118,6 +119,45 @@ namespace Student.Repository.DL
             ds = SqlHelper.ExecuteDataset(SqlHelper.ConnectionStr(), CommandType.StoredProcedure, "sp_UpdateStudent", pr);
             
             return 0;
+        }
+        public static int UpdateStudentInfo(string filename,string id)
+        {
+            ResponseModels result = new ResponseModels();
+            result.Response = MethodResponse.Success;
+            DataSet ds = new DataSet();
+            SqlParameter[] pr = new SqlParameter[]
+            {
+            new SqlParameter("@filename","Images/"+filename),
+            new SqlParameter("@id",id),
+            new SqlParameter("@Mode","UpdateProfileimage")
+
+            };
+            ds = SqlHelper.ExecuteDataset(SqlHelper.ConnectionStr(), CommandType.StoredProcedure, "sp_UpdateStudent", pr);
+
+            return 0;
+        }
+        public static int UpdateStudentInfo(string oldpass,string newpass, string id)
+        {
+            int a = 0;
+            ResponseModels result = new ResponseModels();
+            result.Response = MethodResponse.Success;
+            DataSet ds = new DataSet();
+            SqlParameter[] pr = new SqlParameter[]
+            {
+            new SqlParameter("@oldpass",oldpass),
+            new SqlParameter("@newpass",newpass),
+            new SqlParameter("@id",id),
+            new SqlParameter("@Mode","changePassword")
+            };
+            ds = SqlHelper.ExecuteDataset(SqlHelper.ConnectionStr(), CommandType.StoredProcedure, "sp_UpdateStudent", pr);
+            if(ds!=null)
+            {
+                if(ds.Tables[0].Rows.Count>0)
+                {
+                    a = Convert.ToInt32(ds.Tables[0].Rows[0]["status"]);
+                }
+            }
+            return a;
         }
         public static int UpdateDiscription(string diss, string id)
         {

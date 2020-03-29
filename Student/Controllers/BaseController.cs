@@ -12,7 +12,7 @@ namespace Student.Controllers
     public class BaseController : Controller
     {
         //
-        // GET: /Base/
+        // GET: /Base/http://localhost:18101/Properties/
         public int LoginUserID;
         public BaseController()
         {

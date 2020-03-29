@@ -22,6 +22,12 @@ namespace Student.Controllers
             models.PaperList = CommanFunction.GetMyAssignPaperList(Convert.ToInt32(System.Web.HttpContext.Current.Session[SessionVariable.UserID].ToString()));
             return View(models);
         }
+        public ActionResult Unattended()
+        {
+            TestPaperModels models = new TestPaperModels();
+            models.PaperList = CommanFunction.GetMyAssignPaperList(Convert.ToInt32(System.Web.HttpContext.Current.Session[SessionVariable.UserID].ToString()));
+            return View(models);
+        }
         public ActionResult Completed()
         {
             TestPaperModels models = new TestPaperModels();
